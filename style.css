@@ -1,0 +1,21 @@
+body {
+  font: 18px sans-serif;
+}
+
+text.xText{
+  fill: black;
+  font: 15px sans-serif;
+  text-anchor: middle;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.dot {
+  stroke: #000;
+}
+
