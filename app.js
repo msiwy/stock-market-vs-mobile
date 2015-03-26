@@ -19,6 +19,7 @@ var homeController = require('./controllers/home');
 /**
  * API keys and Passport configuration.
  */
+
 //var secrets = require('./config/secrets');
 
 /**
