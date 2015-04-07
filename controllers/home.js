@@ -1,4 +1,4 @@
-var Quandl = require("quandl");
+//var Quandl = require("quandl");
 
 /**
  * GET /
@@ -6,12 +6,12 @@ var Quandl = require("quandl");
  */
 exports.index = function(req, res) {
     res.render('home', {
-        title: 'Home'
+        //title: 'Home'
     });
 };
 
-// start getting quandl data
-var quandl = new Quandl({
-    auth_token: "fUZ2XXTui3uvGnAkyqx1"
-});
+//// start getting quandl data
+//var quandl = new Quandl({
+//    auth_token: "fUZ2XXTui3uvGnAkyqx1"
+//});
 
