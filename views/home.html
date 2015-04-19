@@ -1,27 +1,29 @@
-
 <!DOCTYPE html>
 <meta charset="utf-8">
+<head>
+    <style>
+        /* NV3D.js */
+        text {
+            font: 12px sans-serif;
+        }
+        svg {
+            display: block;
+        }
+        html, body, #chart, svg {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
 
-<style>
-    /* NV3D.js */
-    text {
-        font: 12px sans-serif;
-    }
-    svg {
-        display: block;
-    }
-    html, body, #chart, svg {
-        margin: 0px;
-        padding: 0px;
-        height: 100%;
-        width: 100%;
-    }
-</style>
-<body>
+    <!--<script src="/js/fetchFromQuandl.js"></script>-->
+    <!--<script src="/js/stacked-graph.js"></script>-->
     <link href="/css/nv.d3.css" rel="stylesheet">
     <script src="/js/lib/nv.d3.min.js"></script>
     <script src="/js/nv-test.js"></script>
-    
+</head>
+<body>
     <div id="chart" class='with-3d-shadow with-transitions'>
         <svg></svg>
     </div>
