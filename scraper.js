@@ -7,7 +7,7 @@ var app = express();
 var urls = [];
 var jsonDataArray = [];
 
-app.get('/scrape', function (req, res) {
+app.get('/', function(req, res) {
     /*
      var specsList = [];
      var evenCounter = 0;
@@ -19,11 +19,11 @@ app.get('/scrape', function (req, res) {
      });
      console.log(specsList); */
 
-    var getUrls = function (callback) {
+    var getUrls = function(callback) {
         /* GET URLS FOR EACH PHONE */
         var url = 'http://www.phonearena.com/phones/manufacturers/Apple/view/list/';
 
-        request(url, function (error, response, html) {
+        request(url, function(error, response, html) {
             if (error || response.statusCode != 200) {
                 console.log("ERROR: " + error.toString());
                 return;
@@ -31,7 +31,7 @@ app.get('/scrape', function (req, res) {
 
             var $ = cheerio.load(html);
 
-            $('.s_block_1_s1').each(function (i, element) {
+            $('.s_block_1_s1').each(function(i, element) {
                 var a = $(this);
                 var image = a.find(".s_thumb").attr('href');
                 var phoneName = a.children('h3').children().eq(0).attr('href');
@@ -43,10 +43,10 @@ app.get('/scrape', function (req, res) {
         });
     };
 
-    var phoneData = function (index, callback) {
+    var phoneData = function(index, callback) {
         url = "http://www.phonearena.com" + urls[index];
         console.log("RETRIEVING ", url);
-        request(url, function (error, response, html) {
+        request(url, function(error, response, html) {
             if (error || response.statusCode != 200) {
                 console.log("ERROR: " + error.toString());
                 return;
@@ -65,7 +65,7 @@ app.get('/scrape', function (req, res) {
                 imageUrl: ""
             };
 
-            $('#phone').filter(function () {
+            $('#phone').filter(function() {
                 var data = $(this);
                 var name = data.children('h1').children().eq(0).text();
                 var description = data.find(".desc").text();
@@ -95,18 +95,18 @@ app.get('/scrape', function (req, res) {
         });
     };
 
-    var retrieveData = function (callback) {
+    var retrieveData = function(callback) {
         console.log("Retrieving info for each phone", urls.length);
         for (var index = 0; index < urls.length; index++) {
             phoneData(index, callback);
         }
     };
 
-    getUrls(function () {
-        retrieveData(function () {
+    getUrls(function() {
+        retrieveData(function() {
             /* OUTPUT TO JSON */
             if (jsonDataArray.length == urls.length) {
-                fs.writeFile('output.json', JSON.stringify(jsonDataArray, null, 4), function (err) {
+                fs.writeFile('output.json', JSON.stringify(jsonDataArray, null, 4), function(err) {
                     console.log('File successfully written! - Check output.');
                 });
             }
