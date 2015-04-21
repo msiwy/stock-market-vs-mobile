@@ -1,0 +1,111 @@
+[
+    {
+        "symbol": "GOOG",
+        "name": "Google Nexus 8",
+        "description": "",
+        "phonearenaRating": "",
+        "userRating": "",
+        "announceDate": "Mar 12, 2014",
+        "status": "Not officially announced",
+        "releaseDate": "July 2014                 (Unofficial)"
+    },
+    {
+        "symbol": "GOOG",
+        "name": "Google Nexus 10",
+        "description": "Google Nexus 10 is a beast of a device, with the main feature: a 2650x1600 display clocking in at 299 pixels per inch. As for the rest of the specs, the Nexus 10 will be packing Samsung's new 1.7GHz Cortex A15-based Exynos 5 chip, and quad-core Mali-T604 GPU, 2GB of RAM, NFC, a 5MP rear camera, and 1.9MP front camera. The tablet will also be running Android 4.2, just like the LG Nexus 4. One downside for some users is that the Nexus 10 will not have an SD card slot, so the storage is what it is.",
+        "phonearenaRating": "9",
+        "userRating": "99.3",
+        "announceDate": "Oct 29, 2012",
+        "status": "Released",
+        "releaseDate": "Nov 13, 2012",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/38613-xlarge/Google-Nexus-10.jpg"
+    },
+    {
+        "symbol": "GOOG",
+        "name": "Google Nexus 6",
+        "description": "The Nexus 6 is powered by the Snapdragon 805 system chip, the jewel in Qualcomm’s 32-bit crown. This is the last iteration of Qualcomm’s Krait CPU core architecture, with four cores running at up to 2.65GHz, along with 3GB of RAM, and Adreno 420 graphics. The devices sports a 5.96\" AMOLED screen with 1440x2560 pixels resolution, a 13-megapixel shooter capable of capturing 4K videos, a secondary 2-megapixel unit can be found on the front alongside the two front facing speakers.",
+        "phonearenaRating": "9",
+        "userRating": "99.6",
+        "announceDate": "Oct 15, 2014",
+        "status": "Released",
+        "releaseDate": "",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/49488-large/Google-Nexus-6.jpg"
+    },
+    {
+        "symbol": "GOOG",
+        "name": "Google Nexus 7",
+        "description": "The Google Nexus 7, manufactured by Asus, is an Android slate with 7-inch 1280x800 screen and a 1.3GHz NVIDIA Tegra 3 quad-core processor. The tablet runs Android 4.1 Jellybean.",
+        "phonearenaRating": "9",
+        "userRating": "99.2",
+        "announceDate": "Jun 27, 2012",
+        "status": "Released",
+        "releaseDate": "Jul 15, 2012",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/36897-large/Google-Nexus-7.jpg"
+    },
+    {
+        "symbol": "GOOG",
+        "name": "Google Nexus S 4G",
+        "description": "Google Nexus S 4G is the is the WiMAX capable brother of the Google Nexus S. It is not a great leap forward in the same way that the original Nexus was but rather is more like a refreshed version of the Samsung Galaxy S. It runs Google's new version of Android OS Gingerbread and it is powered by 1GHz processor. Other features include a 4-inch Super AMOLED Contour Display, which is slightly curved, 5MP camera, Near Field Communication (NFC), Wi-Fi and more.",
+        "phonearenaRating": "85",
+        "userRating": "8.58.3",
+        "announceDate": "Mar 21, 2011",
+        "status": "Released",
+        "releaseDate": "May  8, 2011",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/27607-xlarge/Google-Nexus-S-4G.jpg"
+    },
+    {
+        "symbol": "GOOG",
+        "name": "Google Nexus 4",
+        "description": "Google Nexus 4 has a 1.5GHz quad-core Snapdragon S4 Pro with Krait CPUs (meaning this thing should be crazy fast), a 4.7-inch WXGA True HD IPS Plus (1280 x 768 pixels) display with Zerogap Touch technology and Corning Gorilla Glass 2, 2GB of RAM, an 8MP rear camera, a 1.3MP front camera, and a 2100 mAh battery rated for upwards of 15.3 hours of talk time. The device has NFC as expected, and will support wireless charging. It will run Android 4.2 Jelly Bean.",
+        "phonearenaRating": "9",
+        "userRating": "99.4",
+        "announceDate": "Oct 29, 2012",
+        "status": "Released",
+        "releaseDate": "Nov 13, 2012",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/38618-xlarge/Google-Nexus-4.jpg"
+    },
+    {
+        "symbol": "GOOG",
+        "name": "Google Nexus 9",
+        "description": "The HTC made Nexus 9 comes with a 8.9-inch IPS screen with 2048x1536 pixels resolution (4:3 aspect ratio), an 8-megapixel shooter with led flash, Bluetooth 4.1 connectivity and 16 or 32GB of storage. The tablet is powered by a 64bit NVIDIA tegra K1 dual-core processor clocked at 2.3GHz and 2GB of DDR3 memory. The Nexus 9 will come in 2 variations; either Wi-Fi only or Wi-Fi+LTE.",
+        "phonearenaRating": "93",
+        "userRating": "9.38.6",
+        "announceDate": "Oct 15, 2014",
+        "status": "Released",
+        "releaseDate": "",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/49489-xlarge/Google-Nexus-9.jpg"
+    },
+    {
+        "symbol": "GOOG",
+        "name": "Google Nexus S",
+        "description": "Google Nexus S is the follow-up of the Google Nexus One. It is not a great leap forward in the same way that the original Nexus was but rather is more like a refreshed version of the Samsung Galaxy S. It runs Google's new version of Android OS which is called Gingerbread and it is powered by 1GHz processor. Other features include a 4-inch Super AMOLED unique Contour Display, which is slightly curved, 5MP camera, Near Field Communication (NFC), Wi-Fi and more.\n\nThe phone is offered unlocked or with T-Mobile USA and AT&T service plans through Best Buy only, and not directly by T-Mobile or AT&T.",
+        "phonearenaRating": "85",
+        "userRating": "8.58.8",
+        "announceDate": "Dec  7, 2010",
+        "status": "Released",
+        "releaseDate": "Dec 16, 2010",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/23642-large/Google-Nexus-S.jpg"
+    },
+    {
+        "symbol": "GOOG",
+        "name": "Google Nexus 7 (2013)",
+        "description": "The second generation Google Nexus 7 tablet contiinues with the tradition of the first to offer great specs at cost, which ballooned the Android tablets market share, chipping away at the archrival's iPad domination. The 2013 iteration of the Nexus 7 comes with the record for a tablet 323ppi pixel density, quad-core processor, 2 GB of RAM and 5 MP camera on the back, all for the low starting price of $230, cementing its place in the tablet hall of fame.",
+        "phonearenaRating": "95",
+        "userRating": "9.59.3",
+        "announceDate": "Jul 24, 2013",
+        "status": "Released",
+        "releaseDate": "Jul 26, 2013",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/42118-large/Google-Nexus-7-2013.jpg"
+    },
+    {
+        "symbol": "GOOG",
+        "name": "Google Nexus 5",
+        "description": "The Nexus 5 is an affordable device packing top-shelf specs. Made in collaboration with Google and LG, the Nexus 5 runs on the newest Android 4.4 KitKat. It is a solid performer featuring a Snapdragon 800 system chip and 2GB of RAM. It is also the first Nexus to put the focus on camera performance as it comes with an 8-megapixel shooter with optical image stabilization (OIS).",
+        "phonearenaRating": "95",
+        "userRating": "9.59.4",
+        "announceDate": "Oct 31, 2013",
+        "status": "Released",
+        "releaseDate": "Oct 31, 2013",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/43727-xlarge/Google-Nexus-5.jpg"
+    }
+]
