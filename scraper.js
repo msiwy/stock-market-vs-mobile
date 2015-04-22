@@ -130,7 +130,7 @@ var retrieveData = function(jsonDataArray, symbol, urls, callback) {
 getUrls(companies[0], function(symbol, urls) {
     var jsonDataArray = [];
     retrieveData(jsonDataArray, symbol, urls, function(jsonDataArray) {
-        /* OUTPUT TO JSON */
+        /*OUTPUT TO JSON */
         if (jsonDataArray.length == urls.length) {
             fs.writeFile('' + companies[0] + '.json', JSON.stringify(jsonDataArray, null, 4), function(err) {
                 console.log('File successfully written! - Check output.');
