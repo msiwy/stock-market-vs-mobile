@@ -52,16 +52,19 @@ buildTimeSeries = function (dataa) {
     dataa.forEach(function(d,i) {
         var item = [d.key];
         d.values.forEach(function(j) {
-            dates.push(j.datej);
             item.push(j.pricej);
         });
         
         modData.push(item);
     }); 
 
+    // Only log the dates once - fixes tooltip hover
+    dataa[0].values.forEach(function(j) {
+        dates.push(j.datej);
+    });
+
     modData.push(dates);
     // ------------------------------
-    
 
     var chart = c3.generate({
       bindto: '#chart',
@@ -76,15 +79,12 @@ buildTimeSeries = function (dataa) {
                   format: '%Y-%m-%d'
               }
           },
-          
       },
       subchart: {
           show: true
-      }
-      
+      }      
   });
 };
-
 
 
 
