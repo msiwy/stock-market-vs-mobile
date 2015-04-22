@@ -15,3 +15,22 @@ text.xText {
     shape-rendering: crispEdges;
 }
 
+svg {
+    font: 10px sans-serif;
+}
+
+path {
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+
+.brush .extent {
+    stroke: #fff;
+    fill-opacity: .125;
+    shape-rendering: crispEdges;
+}
+
+.dot {
+    stroke: #000;
+}
