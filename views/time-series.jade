@@ -3,3 +3,14 @@ extends layout
 block content
     #chart
     script(type="text/javascript" src="js/c3rework.js")
+     
+    input(type='checkbox', name='vehicle', value='AAPL', checked, onclick='updateTimeSeriesMarkers(value, checked)')
+    |  AAPL
+    | &#x9;&#x9;
+    input(type='checkbox', name='vehicle', value='GOOG', checked, onclick='updateTimeSeriesMarkers(value, checked)')
+    |  GOOG
+    | &#x9;&#x9;
+    input(type='checkbox', name='vehicle', value='MSI', checked, onclick='updateTimeSeriesMarkers(value, checked)')
+    |  MSI
+
+
