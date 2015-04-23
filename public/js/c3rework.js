@@ -6,19 +6,18 @@ var phonearenaMarkers = [];
 var finished;
 var phonearenaCount = 0;
 
-var sources = ["https://www.quandl.com/api/v1/datasets/WIKI/AAPL.json?auth_token=MX4jg7jQAHp7SDTxGxd4&trim_start=2012-12-31&column=4",
-    "https://www.quandl.com/api/v1/datasets/WIKI/MSI.json?auth_token=MX4jg7jQAHp7SDTxGxd4&trim_start=2012-12-31&column=4",
-    "https://www.quandl.com/api/v1/datasets/WIKI/GOOG.json?auth_token=MX4jg7jQAHp7SDTxGxd4&trim_start=2012-12-31&column=4",
+var sources = ["https://www.quandl.com/api/v1/datasets/GOOG/NASDAQ_AAPL.json?auth_token=BF_415Fh7xADmmnHJDEs&trim_start=2012-04-22&column=4",
+    "https://www.quandl.com/api/v1/datasets/GOOG/NYSE_MSI.json?auth_token=BF_415Fh7xADmmnHJDEs&trim_start=2012-04-22&column=4",
+    "https://www.quandl.com/api/v1/datasets/GOOG/NASDAQ_GOOG.json?auth_token=BF_415Fh7xADmmnHJDEs&trim_start=2012-04-22&column=4",
     "../phone-data/Apple.json",
-    "../phone-data/Google.json"];
+    "../phone-data/Google.json"];    
 
 var retrieveSingleStockInfo = function (index, callback) {
     d3.json(sources[index], function (error, stockJson) {
         if (stockJson.code) {
             lineData[index] = {
                 values: [],
-                key: stockJson.code,
-                color: color(stockJson.code)
+                key: stockJson.code
             };
 
             var stockData = stockJson.data.map(function (d) {
@@ -89,15 +88,16 @@ buildTimeSeries = function () {
         },
         data: {
             xs: {
-                "AAPL": "AAPLx",
-                "MSI": "MSIx",
-                "GOOG": "GOOGx"
+                "NASDAQ_AAPL": "NASDAQ_AAPLx",
+                "NYSE_MSI": "NYSE_MSIx",
+                "NASDAQ_GOOG": "NASDAQ_GOOGx"
+
             },
             columns: [
-                modData[0],
+                modData[0], // ["NASDAQ_AAPL", 564, 566, ...]
                 modData[1],
                 modData[2],
-                xValues[0],
+                xValues[0], // ["NASDAQ_AAPLx", 2015-01-13, .....]
                 xValues[1],
                 xValues[2]
             ]
@@ -106,7 +106,8 @@ buildTimeSeries = function () {
             x: {
                 type: 'timeseries',
                 tick: {
-                    format: '%Y-%m-%d'
+                    format: '%Y-%m-%d',
+                    count: 20
                 }
             },
         },
