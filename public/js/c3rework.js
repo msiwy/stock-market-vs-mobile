@@ -5,12 +5,13 @@ var parsePhoneDate = d3.time.format("%b %e, %Y").parse
 var lineData = [];
 var phonearenaMarkers = [];
 var finished;
-var aCheck = false;
+var phonearenaCount = 0;
 
 var sources = ["https://www.quandl.com/api/v1/datasets/WIKI/AAPL.json?auth_token=MX4jg7jQAHp7SDTxGxd4&trim_start=2012-12-31&column=4",
     "https://www.quandl.com/api/v1/datasets/WIKI/MSI.json?auth_token=MX4jg7jQAHp7SDTxGxd4&trim_start=2012-12-31&column=4",
-    "https://www.quandl.com/api/v1/datasets/WIKI/MSFT.json?auth_token=MX4jg7jQAHp7SDTxGxd4&trim_start=2012-12-31&column=4",
-    "../data/Apple.json"];
+    "https://www.quandl.com/api/v1/datasets/WIKI/GOOG.json?auth_token=MX4jg7jQAHp7SDTxGxd4&trim_start=2012-12-31&column=4",
+    "../data/Apple.json",
+    "../data/Google.json"];
 
 var retrieveSingleStockInfo = function (index, callback) {
     d3.json(sources[index], function (error, stockJson) {
@@ -30,7 +31,7 @@ var retrieveSingleStockInfo = function (index, callback) {
 
             lineData[index].values = stockData;
         } else {
-            phonearenaMarkers = stockJson.map(function (d) {
+            phonearenaMarkers = phonearenaMarkers.concat(stockJson.map(function (d) {
                 return {
                     value: parsePhoneDate(d.announceDate), // some dates will be out of view
                     text: d.name,
@@ -39,9 +40,9 @@ var retrieveSingleStockInfo = function (index, callback) {
                     // ratings
                     // release date?
                 };
-            });
+            }));
+            phonearenaCount++;
 
-            aCheck = true;
         }
         // After last request, make the graph because we have all the JSON requests have returned
         callback();
@@ -53,19 +54,11 @@ var fetchJSON = function (callback) {
     }
 };
 
-/*dateInRange = function(date) {
-  if (date >= parseDate("2012-12-31")) {
-    return date;
-  } else {
-    return 0;
-  }
-};*/
-
-
 fetchJSON(function () {
     /* OUTPUT TO JSON */
     // sources.length MINUES NUM OF JSON FILES!!!
-    if (lineData.length == sources.length-1 && lineData[0] != null && lineData[1] != null && lineData[2] != null && !finished && aCheck) {
+    if (lineData.length == sources.length-2 && lineData[0] != null && lineData[1] != null && lineData[2] != null && !finished && 
+          phonearenaCount == 2) {
         buildTimeSeries();
         finished = true;
     }
@@ -74,23 +67,19 @@ fetchJSON(function () {
 buildTimeSeries = function () {   
     // REWORK THIS IF TIME PERMITS ---
     var modData = [];
-    var dates = ["dates"];
+    var xValues = [];
 
     lineData.forEach(function(d,i) {
         var item = [d.key];
+        var xDate = [d.key + "x"];
         d.values.forEach(function(j) {
             item.push(j.pricej);
+            xDate.push(j.datej);
         });
         
         modData.push(item);
+        xValues.push(xDate);
     }); 
-
-    // Only log the dates once - fixes tooltip hover
-    lineData[0].values.forEach(function(j) {
-        dates.push(j.datej);
-    });
-
-    modData.push(dates);
     // ------------------------------
 
     var chart = c3.generate({
@@ -99,11 +88,19 @@ buildTimeSeries = function () {
         height: 600
       },
       data: {
-          x: 'dates',
-          columns: modData,
-          /*onmouseover: function (d) {
-            console.log(d);
-          }*/
+          xs: {
+            "AAPL": "AAPLx",
+            "MSI": "MSIx",
+            "GOOG": "GOOGx"
+          },
+          columns: [
+            modData[0],
+            modData[1],
+            modData[2],
+            xValues[0],
+            xValues[1],
+            xValues[2]
+          ]
       },
       axis: {
           x: {
@@ -118,9 +115,12 @@ buildTimeSeries = function () {
               lines: phonearenaMarkers
           }
       },
+      zoom: {
+        enabled: true
+      }, 
       subchart: {
           show: true
-      }      
+      }     
   });
 };
 
