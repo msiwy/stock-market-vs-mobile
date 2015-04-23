@@ -14,7 +14,8 @@ var compress = require('compression');
  * Controllers (route handlers).
  */
 
-var homeController = require('./controllers/home');
+var timeSeriesController = require('./controllers/time-series');
+var stackedGraphController = require('./controllers/stacked-graph');
 
 /**
  * API keys and Passport configuration.
@@ -46,7 +47,11 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31540000000 }))
  * Main routes.
  */
 
-app.get('/', homeController.index);
+app.get('/', timeSeriesController.getTimeSeries);
+app.get('/time-series', timeSeriesController.getTimeSeries);
+app.get('/stacked-graph', stackedGraphController.getStackedGraph);
+
+
 
 /**
  * 500 Error Handler.

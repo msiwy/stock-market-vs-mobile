@@ -7,7 +7,7 @@ var start = "2004-03-23";
 
 function getStockData(exchange, symbol) {
 
-    // Get stock data
+    // Get stock phone-data
     var json = $.getJSON("https://www.quandl.com/api/v1/datasets/GOOG/" + exchange.toUpperCase() + "_"
     + symbol.toUpperCase() + ".json?auth_token=" + this.authToken + "&trim_start=" + this.start + "", function () {
         console.log("Data load success.");

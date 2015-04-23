@@ -1,5 +1,7 @@
 body {
     font: 18px sans-serif;
+    padding-top: 60px;
+    margin-bottom: 75px;
 }
 
 text.xText {

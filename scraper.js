@@ -9,9 +9,9 @@ var companies = ['Motorola', 'Apple', 'Microsoft', 'Sony', 'Blackberry', 'Google
  var specsList = [];
  var evenCounter = 0;
  $('.s_lv_1').each(function (i, element) {
- var data = $(this);
+ var phone-data = $(this);
  if (evenCounter++ % 2 == 0) {
- specsList.push(data.text());
+ specsList.push(phone-data.text());
  }
  });
  console.log(specsList); */
@@ -124,77 +124,17 @@ var retrieveData = function(jsonDataArray, symbol, urls, callback) {
     }
 };
 
-/*  @TODO I am still not good with javascript... mutable variable? Couldn't run for loop */
-// @TODO callback hell
 // Generate a file for each company.
-getUrls(companies[0], function(symbol, urls) {
-    var jsonDataArray = [];
-    retrieveData(jsonDataArray, symbol, urls, function(jsonDataArray) {
-        /*OUTPUT TO JSON */
-        if (jsonDataArray.length == urls.length) {
-            fs.writeFile('' + companies[0] + '.json', JSON.stringify(jsonDataArray, null, 4), function(err) {
-                console.log('File successfully written! - Check output.');
-            });
-        }
-    })
-});
-
-getUrls(companies[1], function(symbol, urls) {
-    var jsonDataArray = [];
-    retrieveData(jsonDataArray, symbol, urls, function(jsonDataArray) {
-        /* OUTPUT TO JSON */
-        if (jsonDataArray.length == urls.length) {
-            fs.writeFile('' + companies[1] + '.json', JSON.stringify(jsonDataArray, null, 4), function(err) {
-                console.log('File successfully written! - Check output.');
-            });
-        }
-    })
-});
-
-getUrls(companies[2], function(symbol, urls) {
-    var jsonDataArray = [];
-    retrieveData(jsonDataArray, symbol, urls, function(jsonDataArray) {
-        /* OUTPUT TO JSON */
-        if (jsonDataArray.length == urls.length) {
-            fs.writeFile('' + companies[2] + '.json', JSON.stringify(jsonDataArray, null, 4), function(err) {
-                console.log('File successfully written! - Check output.');
-            });
-        }
-    })
-});
-
-getUrls(companies[3], function(symbol, urls) {
-    var jsonDataArray = [];
-    retrieveData(jsonDataArray, symbol, urls, function(jsonDataArray) {
-        /* OUTPUT TO JSON */
-        if (jsonDataArray.length == urls.length) {
-            fs.writeFile('' + companies[3] + '.json', JSON.stringify(jsonDataArray, null, 4), function(err) {
-                console.log('File successfully written! - Check output.');
-            });
-        }
-    })
-});
-
-getUrls(companies[4], function(symbol, urls) {
-    var jsonDataArray = [];
-    retrieveData(jsonDataArray, symbol, urls, function(jsonDataArray) {
-        /* OUTPUT TO JSON */
-        if (jsonDataArray.length == urls.length) {
-            fs.writeFile('' + companies[4] + '.json', JSON.stringify(jsonDataArray, null, 4), function(err) {
-                console.log('File successfully written! - Check output.');
-            });
-        }
-    })
-});
-
-getUrls(companies[5], function(symbol, urls) {
-    var jsonDataArray = [];
-    retrieveData(jsonDataArray, symbol, urls, function(jsonDataArray) {
-        /* OUTPUT TO JSON */
-        if (jsonDataArray.length == urls.length) {
-            fs.writeFile('' + companies[5] + '.json', JSON.stringify(jsonDataArray, null, 4), function(err) {
-                console.log('File successfully written! - Check output.');
-            });
-        }
-    })
-});
+for (i=0; i<companies.length; i++) {
+    getUrls(companies[i], function (symbol, urls) {
+        var jsonDataArray = [];
+        retrieveData(jsonDataArray, symbol, urls, function (jsonDataArray) {
+            /*OUTPUT TO JSON */
+            if (jsonDataArray.length == urls.length) {
+                fs.writeFile('./public/data/' + companies[0] + '.json', JSON.stringify(jsonDataArray, null, 4), function (err) {
+                    console.log('File successfully written! - Check output.');
+                });
+            }
+        })
+    });
+}

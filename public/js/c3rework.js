@@ -9,8 +9,8 @@ var phonearenaCount = 0;
 var sources = ["https://www.quandl.com/api/v1/datasets/WIKI/AAPL.json?auth_token=MX4jg7jQAHp7SDTxGxd4&trim_start=2012-12-31&column=4",
     "https://www.quandl.com/api/v1/datasets/WIKI/MSI.json?auth_token=MX4jg7jQAHp7SDTxGxd4&trim_start=2012-12-31&column=4",
     "https://www.quandl.com/api/v1/datasets/WIKI/GOOG.json?auth_token=MX4jg7jQAHp7SDTxGxd4&trim_start=2012-12-31&column=4",
-    "../data/Apple.json",
-    "../data/Google.json"];
+    "../phone-data/Apple.json",
+    "../phone-data/Google.json"];
 
 var retrieveSingleStockInfo = function (index, callback) {
     d3.json(sources[index], function (error, stockJson) {
@@ -47,6 +47,7 @@ var retrieveSingleStockInfo = function (index, callback) {
         callback();
     });
 };
+
 var fetchJSON = function (callback) {
     for (var index = 0; index < sources.length; index++) {
         retrieveSingleStockInfo(index, callback);

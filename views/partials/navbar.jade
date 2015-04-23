@@ -1,0 +1,20 @@
+.navbar.navbar-default.navbar-fixed-top
+    .navbar-header
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        a.navbar-brand(href='/')
+            i.fa.fa-cube
+            | Stocks n' Stuff
+    .collapse.navbar-collapse
+        ul.nav.navbar-nav
+            li(class=title=='Time Series'?'active':undefined)
+                a(href='/') Time Series
+            li(class=title=='Stacked Graph'?'active':undefined)
+                a(href='/stacked-graph') Stacked Graph
+            li(class=title=='Resources'?'active':undefined)
+                a(href='/resources') Resources
+            li(class=title=='Contact'?'active':undefined)
+                a(href='/information') Information
