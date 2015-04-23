@@ -116,10 +116,12 @@ buildTimeSeries = function () {
             }
         },
         legend: {
-            show: true
+            show: true,
+            position: 'right'
         },
         zoom: {
-            enabled: true
+            enabled: true,
+            rescale: true
         },
         subchart: {
             show: true
