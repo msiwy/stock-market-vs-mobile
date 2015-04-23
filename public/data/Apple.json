@@ -1,0 +1,101 @@
+[
+    {
+        "symbol": "AAPL",
+        "name": "Apple iPhone 6",
+        "description": "The iPhone 6 represents Apple's second largest departure in terms of design since the iPhone 4, and ushers in an era of rounded aesthetics. Equipped with a 4.7-inch display, the iPhone 6 is also much larger than its predecessor, the iPhone 5s, but Apple has managed to trim some extra fat in order to make the new iPhone even thinner, at 0.27 in (6.9 mm). \n\nThe innards of the iPhone 6, too, went through improvements. The home-grown dual-core A8 processor is the third consecutive Apple chip to be custom-designed, and offers performance improvements of up to 25% and 50% in the of CPU and GPU departments respectively. The 8-megapixel, 1/3” iSight camera also received several upgrades, mostly on the software side, and now offers faster, phase detection auto focus, plus support for super-smooth 720p clips at the industry-leading 240 frames per second.",
+        "phonearenaRating": "9",
+        "userRating": "99.2",
+        "announceDate": "Sep  9, 2014",
+        "status": "Released",
+        "releaseDate": "Sep 19, 2014",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/48955-xlarge/Apple-iPhone-6.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "name": "Apple iPhone 5s",
+        "description": "The iPhone 5s is not a radical departure in design for Apple, save for one very important feature. No, we don't mean the new Space Gray and Gold colors. We have in mind the home button that has been on iPhones from day one, is now turned into a fingerprint scanner dubbed Touch ID. It lets you unlock the phone and authorize purchases, safely storing your fingerprints in the A7 processor itself, out of the reach for anyone but a few default iOS 7 apps.\n\nThis A7 processor debuts on the iPhone 5s as the first 64-bit mobile chipset in use on a commercial device, utilized by the latest flat and minimalistic iOS 7 that has been rewritten to take advantage of the 64-bit system. It sports a dedicated M7 co-processor for always-on motion sensing, too.\n\nThe iSight camera stayed 8 MP, but is much improved, with larger pixels, wider aperture, and the ability to shoot slow motion videos, not to mention the dual two-tone LED flash on the back that strives for natural skin color representation.",
+        "phonearenaRating": "93",
+        "userRating": "9.38.7",
+        "announceDate": "Sep 10, 2013",
+        "status": "Released",
+        "releaseDate": "Sep 20, 2013",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/42885-xlarge/Apple-iPhone-5s.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "name": "Apple iPhone 5",
+        "description": "The Apple iPhone 5 is the first iPhone with a larger, 4-inch screen. At the same time, it has become thinner, with a more elongated body. The iPhone 5 is powered by a new A6 chip that’s twice as powerful as the chip on the preceding iPhone 4S. It’s also the first iPhone with 4G LTE, supporting not just American frequencies, but LTE networks across the globe.",
+        "phonearenaRating": "9",
+        "userRating": "98.5",
+        "announceDate": "Sep 12, 2012",
+        "status": "Released",
+        "releaseDate": "Sep 21, 2012",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/37986-xlarge/Apple-iPhone-5.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "name": "Apple iPhone 4s",
+        "description": "The iPhone 4s is a gradual step over the iPhone 4 improving the internals, but keeping the look and feel. At the same time, though, it brings a reworked iOS 5 and introduces Siri, a personal voice assistant allowing you to vocally communicate with the iPhone. It comes with a 3.5\" screen with a resolution of 640 x 960 pixels, but on the inside there's a twice more powerful dual-core A5 processor. It also improves connectivity a notch, bringing 14.4Mbps HSPA download speeds. The back is where an 8-megapixel camera resides and it's capable of recording 1080p videos.",
+        "phonearenaRating": "85",
+        "userRating": "8.58.1",
+        "announceDate": "Oct  4, 2011",
+        "status": "Released",
+        "releaseDate": "Oct 14, 2011",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/31840-large/Apple-iPhone-4s.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "name": "Apple iPhone 4 Verizon",
+        "description": "The first CDMA version of the Apple iPhone - the iPhone 4 is almost completely identical to AT&T's smartphone, with the only difference being the CDMA radio and ability to do Mobile Hotspot for up to 5 devices. The other features include a 5MP main camera lens with LED flash and 720p HD video recording, secondary mic for noise-cancellation, GPS, Gyroscope and what not.",
+        "phonearenaRating": "9",
+        "userRating": "97.9",
+        "announceDate": "Jan 11, 2011",
+        "status": "Released",
+        "releaseDate": "Feb 10, 2011",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/26122-xlarge/Apple-iPhone-4-Verizon.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "name": "Apple iPhone 4",
+        "description": "The iPhone 4 is now boxier, with the rear side now flat, instead of rounded.  It will keep the 3.5-inch display diagonal, but will quadruple the pixels to 640x960, making it the highest-resolution screen on a smartphone to date. Apple actually calls the new screen Retina Display, because it shows 326 pixels per inch, while the human eye can only distinguish around 300 ppi. In addition, the screen will utilize the LCD IPS  technology (same as in the iPad). The other new stuff includes a front-facing video call camera, 5MP main camera lens with LED flash and 720p HD video recording, Micro-SIM slot, instead of ordinary SIM, a secondary mic for noise-cancellation and a lot of other new features.",
+        "phonearenaRating": "95",
+        "userRating": "9.58.2",
+        "announceDate": "Jun  7, 2010",
+        "status": "Released",
+        "releaseDate": "Jun 24, 2010",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/21284-large/Apple-iPhone-4.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "name": "Apple iPhone 3GS",
+        "description": "Apple iPhone 3GS adds support for HSDPA 7.2 Mbps fast data and a digital compass. The new model from Cupertino's factory also has an improved battery life and working speed - loading is much more faster. The camera is upgraded to a 3-megapixel sensor with autofocus and tap to focus option and is capable of video recording with a VGA resolution (640x480 pixels). In the other aspects, Apple iPhone 3GS is pretty much the same as the previous version and has a 3.5\" multi-touch display with resolution of 480x320 pixels, Wi-Fi, GPS and it has the same size.",
+        "phonearenaRating": "85",
+        "userRating": "8.58",
+        "announceDate": "Jun  8, 2009",
+        "status": "Released",
+        "releaseDate": "Jun 19, 2009",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/16112-large/Apple-iPhone-3GS.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "name": "Apple iPhone 3G",
+        "description": "Apple iPhone 3G adds support of 3G HSDPA fast data and GPS. It has the same screen, camera, OS and memory (8 or 16GB) as the first one, and almost the same design but now will accept any 3.5mm headphones. It will run on the new software version which support third party application thanks to the official SDK.",
+        "phonearenaRating": "8",
+        "userRating": "87.4",
+        "announceDate": "Jun  9, 2008",
+        "status": "Released",
+        "releaseDate": "Jul 11, 2008",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/10530-large/Apple-iPhone-3G.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "name": "Apple iPhone",
+        "description": "Apple iPhone is unique phone with slim profile and no keys - it has 3.5 inches touch display that uses multi-touch technology for navigation. A sensor controls the orientation of the display, and iPhone OS controls the smartphone's functionality. It is a quad-band GSM/EDGE device with WiFi and Bluetooth, and features 16/8/4GB of memory. Among its features there are YouTube and Google Maps applications, excellent internet browser called Safari and iPOD music/video player with CoverFlow technology, showing large album covers.",
+        "phonearenaRating": "88",
+        "userRating": "8.88.1",
+        "announceDate": "Jan  9, 2007",
+        "status": "Released",
+        "releaseDate": "Jun 29, 2007",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/9090-large/Apple-iPhone.jpg"
+    }
+]
