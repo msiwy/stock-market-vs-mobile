@@ -1,4 +1,3 @@
-
 var color = d3.scale.category10();
 var parseDate = d3.time.format("%Y-%m-%d").parse;
 var parsePhoneDate = d3.time.format("%b %e, %Y").parse
@@ -17,9 +16,9 @@ var retrieveSingleStockInfo = function (index, callback) {
     d3.json(sources[index], function (error, stockJson) {
         if (stockJson.code) {
             lineData[index] = {
-              values: [],
-              key: stockJson.code,
-              color: color(stockJson.code)
+                values: [],
+                key: stockJson.code,
+                color: color(stockJson.code)
             };
 
             var stockData = stockJson.data.map(function (d) {
@@ -35,7 +34,7 @@ var retrieveSingleStockInfo = function (index, callback) {
                 return {
                     value: parsePhoneDate(d.announceDate), // some dates will be out of view
                     text: d.name,
-                    stockSymbol: d.symbol 
+                    stockSymbol: d.symbol
                     // imageUrl
                     // ratings
                     // release date?
@@ -57,71 +56,74 @@ var fetchJSON = function (callback) {
 fetchJSON(function () {
     /* OUTPUT TO JSON */
     // sources.length MINUES NUM OF JSON FILES!!!
-    if (lineData.length == sources.length-2 && lineData[0] != null && lineData[1] != null && lineData[2] != null && !finished && 
-          phonearenaCount == 2) {
+    if (lineData.length == sources.length - 2 && lineData[0] != null && lineData[1] != null && lineData[2] != null && !finished &&
+        phonearenaCount == 2) {
         buildTimeSeries();
         finished = true;
     }
 });
 
-buildTimeSeries = function () {   
+buildTimeSeries = function () {
     // REWORK THIS IF TIME PERMITS ---
     var modData = [];
     var xValues = [];
 
-    lineData.forEach(function(d,i) {
+    lineData.forEach(function (d, i) {
         var item = [d.key];
         var xDate = [d.key + "x"];
-        d.values.forEach(function(j) {
+        d.values.forEach(function (j) {
             item.push(j.pricej);
             xDate.push(j.datej);
         });
-        
+
         modData.push(item);
         xValues.push(xDate);
-    }); 
+    });
     // ------------------------------
 
     var chart = c3.generate({
-      bindto: '#chart',
-      size: {
-        height: 600
-      },
-      data: {
-          xs: {
-            "AAPL": "AAPLx",
-            "MSI": "MSIx",
-            "GOOG": "GOOGx"
-          },
-          columns: [
-            modData[0],
-            modData[1],
-            modData[2],
-            xValues[0],
-            xValues[1],
-            xValues[2]
-          ]
-      },
-      axis: {
-          x: {
-              type: 'timeseries',
-              tick: {
-                  format: '%Y-%m-%d'
-              }
-          },
-      },
-      grid: {
-          x: {
-              lines: phonearenaMarkers
-          }
-      },
-      zoom: {
-        enabled: true
-      }, 
-      subchart: {
-          show: true
-      }     
-  });
+        bindto: '#chart',
+        size: {
+            height: 600
+        },
+        data: {
+            xs: {
+                "AAPL": "AAPLx",
+                "MSI": "MSIx",
+                "GOOG": "GOOGx"
+            },
+            columns: [
+                modData[0],
+                modData[1],
+                modData[2],
+                xValues[0],
+                xValues[1],
+                xValues[2]
+            ]
+        },
+        axis: {
+            x: {
+                type: 'timeseries',
+                tick: {
+                    format: '%Y-%m-%d'
+                }
+            },
+        },
+        grid: {
+            x: {
+                lines: phonearenaMarkers
+            }
+        },
+        legend: {
+            show: true
+        },
+        zoom: {
+            enabled: true
+        },
+        subchart: {
+            show: true
+        }
+    });
 };
 
 
