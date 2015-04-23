@@ -1,6 +1,6 @@
 var color = d3.scale.category10();
 var parseDate = d3.time.format("%Y-%m-%d").parse;
-var parsePhoneDate = d3.time.format("%b %e, %Y").parse
+var parsePhoneDate = d3.time.format("%b %e, %Y").parse;
 var lineData = [];
 var phonearenaMarkers = [];
 var finished;

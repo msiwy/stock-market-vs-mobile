@@ -1,0 +1,46 @@
+[
+    {
+        "symbol": "MSFT",
+        "name": "Microsoft Surface Pro 3",
+        "description": "The Microsoft Surface 3 features a 12-inch display with 2160x1440 resolution and a 3:2 aspect ratio. Its body is made out of magnesium which brings down its weight to around 800 grams.The device has several hardware configurations ranging from an Intel Core i3 to an i7 processor, 4 or 8GB of RAM and the storage space starts at the reasonable 64GB and reaches all the way to 512GB. If the built-in memory is not enough, it can be expanded via the microSD port. Its other features include two 5-megapixel cameras with video 1080p capture, mini DisplayPort and Dobly stereo speakers.",
+        "phonearenaRating": "",
+        "userRating": "",
+        "announceDate": "May 20, 2014",
+        "status": "Released",
+        "releaseDate": "Jun 20, 2014",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/47163-xlarge/Microsoft-Surface-Pro-3.jpg"
+    },
+    {
+        "symbol": "MSFT",
+        "name": "Microsoft Surface Pro",
+        "description": "The Microsoft Surface is the first Microsoft-designed tablet computer. The Intel-powered version is thicker and heavier than the ARM one, but comes with the much more powerful Windows 8 Pro, providing the full functionality of a PC. It has a large 10.6\", high-resolution touchscreen and powerful hardware characteristics that allow it to compete with both tablets and high-end laptops alike.",
+        "phonearenaRating": "85",
+        "userRating": "8.5",
+        "announceDate": "Jun 18, 2012",
+        "status": "Released",
+        "releaseDate": "Feb  9, 2013",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/36794-large/Microsoft-Surface-Pro.jpg"
+    },
+    {
+        "symbol": "MSFT",
+        "name": "Microsoft Surface RT",
+        "description": "The Microsoft Surface is the first Microsoft-designed tablet computer. The ARM-powered version is thinner and lighter and features a processor made by NVIDIA. It comes with Windows RT and a large 10.6\" touchscreen. The device is designed to compete mainly with tablets running mobile operating systems like Android and iOS (iPad).",
+        "phonearenaRating": "85",
+        "userRating": "8.5",
+        "announceDate": "Jun 18, 2012",
+        "status": "Released",
+        "releaseDate": "Oct 26, 2012",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/36762-large/Microsoft-Surface-RT.jpg"
+    },
+    {
+        "symbol": "MSFT",
+        "name": "Microsoft Surface Pro 2",
+        "description": "The Surface Pro 2 has the same 10.6\" 1920x1080 pixels ClearType display like its predecessor, but this time with 46% better color accuracy and record low reflectivity, nearly identical with the sRGB color gamut coverage. That is aimed at making it a device for professionals and screen purists alike, but also to make outdoor visibility better for the average user as well.\n\nThe new Surface Pro 2 is equipped with the Haswell architecture of Intel's Core i5 processor, meaning it marks strides in battery life compared to its predecessor - 75% improvement, or between 7-10 hours, depending on the usage. The unit has also been made much quieter, though that still means you are likely to see a fan inside.",
+        "phonearenaRating": "85",
+        "userRating": "8.5",
+        "announceDate": "Sep 23, 2013",
+        "status": "Released",
+        "releaseDate": "Oct 22, 2013",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/42931-xlarge/Microsoft-Surface-Pro-2.jpg"
+    }
+]

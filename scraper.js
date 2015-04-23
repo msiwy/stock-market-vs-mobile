@@ -8,13 +8,16 @@ var companies = ['Motorola', 'Apple', 'Microsoft', 'Sony', 'Blackberry', 'Google
 /*
  var specsList = [];
  var evenCounter = 0;
+
  $('.s_lv_1').each(function (i, element) {
+
  var phone-data = $(this);
- if (evenCounter++ % 2 == 0) {
- specsList.push(phone-data.text());
- }
+     if (evenCounter++ % 2 == 0) {
+     specsList.push(phone-data.text());
+     }
  });
- console.log(specsList); */
+ console.log(specsList);
+ */
 
 var getUrls = function(company, callback) {
     /* GET URLS FOR EACH PHONE */
@@ -124,17 +127,94 @@ var retrieveData = function(jsonDataArray, symbol, urls, callback) {
     }
 };
 
+//// Generate a file for each company.
+//for (i=0; i<companies.length; i++) {
+//    getUrls(companies[i], function (symbol, urls) {
+//        if (urls != null && symbol != null) {
+//            jsonDataArray = [];
+//            retrieveData(jsonDataArray, symbol, urls, function (jsonDataArray) {
+//                /*OUTPUT TO JSON */
+//                if (jsonDataArray.length == urls.length) {
+//                    fs.writeFile('./public/data/' + companies[0] + '.json', JSON.stringify(jsonDataArray, null, 4), function (err) {
+//                        console.log('File successfully written! - Check output.');
+//                    });
+//                }
+//            })
+//        }
+//    });
+//}
+
+/*  @TODO I am still not good with javascript... mutable variable? Couldn't run for loop */
+// @TODO callback hell
 // Generate a file for each company.
-for (i=0; i<companies.length; i++) {
-    getUrls(companies[i], function (symbol, urls) {
-        var jsonDataArray = [];
-        retrieveData(jsonDataArray, symbol, urls, function (jsonDataArray) {
-            /*OUTPUT TO JSON */
-            if (jsonDataArray.length == urls.length) {
-                fs.writeFile('./public/data/' + companies[0] + '.json', JSON.stringify(jsonDataArray, null, 4), function (err) {
-                    console.log('File successfully written! - Check output.');
-                });
-            }
-        })
-    });
-}
+getUrls(companies[0], function(symbol, urls) {
+    var jsonDataArray = [];
+    retrieveData(jsonDataArray, symbol, urls, function(jsonDataArray) {
+        /*OUTPUT TO JSON */
+        if (jsonDataArray.length == urls.length) {
+            fs.writeFile('./public/data/' + companies[0] + '.json', JSON.stringify(jsonDataArray, null, 4), function(err) {
+                console.log('File successfully written! - Check output.');
+            });
+        }
+    })
+});
+
+getUrls(companies[1], function(symbol, urls) {
+    var jsonDataArray = [];
+    retrieveData(jsonDataArray, symbol, urls, function(jsonDataArray) {
+        /* OUTPUT TO JSON */
+        if (jsonDataArray.length == urls.length) {
+            fs.writeFile('./public/data/' + companies[1] + '.json', JSON.stringify(jsonDataArray, null, 4), function(err) {
+                console.log('File successfully written! - Check output.');
+            });
+        }
+    })
+});
+
+getUrls(companies[2], function(symbol, urls) {
+    var jsonDataArray = [];
+    retrieveData(jsonDataArray, symbol, urls, function(jsonDataArray) {
+        /* OUTPUT TO JSON */
+        if (jsonDataArray.length == urls.length) {
+            fs.writeFile('./public/data/' + companies[2] + '.json', JSON.stringify(jsonDataArray, null, 4), function(err) {
+                console.log('File successfully written! - Check output.');
+            });
+        }
+    })
+});
+
+getUrls(companies[3], function(symbol, urls) {
+    var jsonDataArray = [];
+    retrieveData(jsonDataArray, symbol, urls, function(jsonDataArray) {
+        /* OUTPUT TO JSON */
+        if (jsonDataArray.length == urls.length) {
+            fs.writeFile('./public/data/' + companies[3] + '.json', JSON.stringify(jsonDataArray, null, 4), function(err) {
+                console.log('File successfully written! - Check output.');
+            });
+        }
+    })
+});
+
+getUrls(companies[4], function(symbol, urls) {
+    var jsonDataArray = [];
+    retrieveData(jsonDataArray, symbol, urls, function(jsonDataArray) {
+        /* OUTPUT TO JSON */
+        if (jsonDataArray.length == urls.length) {
+            fs.writeFile('./public/data/' + companies[4] + '.json', JSON.stringify(jsonDataArray, null, 4), function(err) {
+                console.log('File successfully written! - Check output.');
+            });
+        }
+    })
+});
+
+getUrls(companies[5], function(symbol, urls) {
+    var jsonDataArray = [];
+    retrieveData(jsonDataArray, symbol, urls, function(jsonDataArray) {
+        /* OUTPUT TO JSON */
+        if (jsonDataArray.length == urls.length) {
+            fs.writeFile('./public/data/' + companies[5] + '.json', JSON.stringify(jsonDataArray, null, 4), function(err) {
+                console.log('File successfully written! - Check output.');
+            });
+        }
+    })
+});
