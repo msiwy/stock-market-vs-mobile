@@ -1,3 +1,5 @@
+var parsePhoneDate = d3.time.format('%b %e, %Y').parse;
+
 /* RATINGS GAUGE CHARTS */
 var phoneArenaRatingsChart = c3.generate({
     bindto: '#phoneArenaRatings',
@@ -62,56 +64,55 @@ var sparklineChart = c3.generate({
     grid: {
         y: {
             show: true
-        },
-        x: {
-            lines: [
-                {value: 1, text: 'Annoucement'}
-            ]
         }
     },
     legend: {
         hide: true
     },
+    point: {
+        show: false
+    },
     axis: {
         x: {
-            show: false
+            show: false,
+            type: 'timeseries',
+            tick: {
+                format: '%Y-%m-%d'
+            }
         },
         y: {
+            show: false,
             label: {
-                text: '$',
+                text: '$'
             },
             tick: {
                 count: 3
-            },
-            show: true
+            }
         }
     },
     data: {
+        x: 'x',
         columns: [
-            ['data1', 0, 0, 0, 0, 0, 0]
+            ['x', '2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
+            ['price', 0, 0, 0, 0, 0, 0]
         ]
     }
 });
 
-setTimeout(function () {
-    sparklineChart.load({
-        columns: [
-            ['data1', 80, 150, 100, 180, 80, 150]
-        ]
-    });
-}, 4000);
+sparklineChart.zoom.enable(true);
 
 /* UPDATE PHONE INFO ON SELECT */
-var onPhoneSelect = function(name) {
+var onPhoneSelect = function (name) {
 
     var div = document.getElementById('phoneInfo');
-    $.getJSON('data/All.json', function(json) {
+    $.getJSON('data/All.json', function (json) {
         /* LOAD PHONE INFORMATION TO HTML */
         // Find the appropriate index of the phone
         var index = 0;
         for (var i = 0; i < json.length; i++) {
             if (json[i].name == name) {
                 index = i;
+                console.log(name);
                 break;
             }
         }
@@ -119,9 +120,7 @@ var onPhoneSelect = function(name) {
         // Phone
         var phoneName = json[index].name;
         var phoneNameHTML = document.getElementById('phoneSelect');
-        console.log(document.getElementById('phoneSelect'));
         phoneNameHTML.innerText = phoneName;
-
 
         // Image
         var imageUrl = "<image src=\"http:" + json[index].imageUrl + "\" class = \"img-rounded\">";
@@ -134,8 +133,68 @@ var onPhoneSelect = function(name) {
         var userRating = json[index].userRating;
         if (userRating > 10) userRating /= 10;
 
+        // Format Date for sparkline
+        var annouceDate = parsePhoneDate(json[index].announceDate);
+        var releaseDate = parsePhoneDate(json[index].releaseDate);
+
+        var date = ("0" + (annouceDate.getMonth() + 1)).slice(-2);
+        var dateR = ("0" + (releaseDate.getMonth() + 1)).slice(-2);
+        var month = ("0" + (annouceDate.getMonth() + 1)).slice(-2);
+        var monthR = ("0" + (releaseDate.getMonth() + 1)).slice(-2);
+
+        var year = annouceDate.getFullYear();
+        var yearR = releaseDate.getFullYear();
+        var formattedAnnounceDate = year + "-" + month + "-" + date;
+        var formattedReleaseDate = yearR + "-" + monthR + "-" + dateR;
+
+        // Removes cluttering if release and announce dates are same.
+        // Keeps release date only.
+        if (formattedReleaseDate == formattedAnnounceDate) {
+            formattedAnnounceDate = "";
+        }
+
+        var d = new Date(year, month + 1, 0);
+        var startDate = year + "-" + month + "-" + "01";
+        month++;
+
+        if (month == 13) {
+            month = "01";
+            year += 1;
+        }
+
+        var endDate = year + "-" + (month + 1) + "-" + (d.getDate() - 2);
+
+        // URL for sparkline
+        var stockJsonUrl = "https://www.quandl.com/api/v1/datasets/GOOG/NASDAQ_GOOG.json?auth_token=dvyP1iucHz_BKyh_YD_e&trim_start=" + startDate + "&trim_end=" + endDate + "&column=4";
+        $.ajax({
+            url: stockJsonUrl,
+            async: true,
+            success: function (jsonData) {
+                var dates = ['x'];
+                var prices = ['price'];
+                jsonData.data.forEach(function (d, i) {
+                    dates.push(d[0]);
+                    prices.push(d[1].toFixed(2));
+                });
+                // Update sparkline
+                setTimeout(function () {
+                    sparklineChart.load({
+                        columns: [
+                            dates,
+                            prices
+                        ]
+                    });
+                }, 500);
+                sparklineChart.xgrids([{value: formattedAnnounceDate, text: 'Announced'}, {
+                    value: formattedReleaseDate,
+                    text: 'Released'
+                }]);
+            }
+        });
+
+
         // Unload and load all scores
-        setTimeout(function() {
+        setTimeout(function () {
             phoneArenaRatingsChart.load({
                 columns: [
                     ['Phone Arena Ratings', 0]
@@ -143,7 +202,7 @@ var onPhoneSelect = function(name) {
             });
         }, 0);
 
-        setTimeout(function() {
+        setTimeout(function () {
             phoneArenaRatingsChart.load({
                 columns: [
                     ['Phone Arena Ratings', phonearenaRating]
@@ -151,7 +210,7 @@ var onPhoneSelect = function(name) {
             });
         }, 500);
 
-        setTimeout(function() {
+        setTimeout(function () {
             userRatingsChart.load({
                 columns: [
                     ['User Ratings', 0]
@@ -159,13 +218,12 @@ var onPhoneSelect = function(name) {
             });
         }, 0);
 
-        setTimeout(function() {
+        setTimeout(function () {
             userRatingsChart.load({
                 columns: [
                     ['User Ratings', userRating]
                 ]
             });
         }, 500);
-
     });
 };
