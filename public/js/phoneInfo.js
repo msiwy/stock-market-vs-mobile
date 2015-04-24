@@ -127,6 +127,53 @@ var onPhoneSelect = function (name) {
         var image = document.getElementById('image');
         image.innerHTML = imageUrl;
 
+        // URL for stocks
+        var stockUrlCode = json[index].symbol;
+        switch (stockUrlCode) {
+            case "GOOG":
+                stockUrlCode = "NASDAQ_GOOG";
+                break;
+            case "SNE":
+                stockUrlCode = "NYSE_SNE";
+                break;
+            case "MSI":
+                stockUrlCode = "NYSE_MSI";
+                break;
+            case "AAPL":
+                stockUrlCode = "NASDAQ_AAPL";
+                break;
+        }
+
+        // Edge cases for no data in json
+        if (json[index].phonearenaRating == "" || json[index].userRating == "") {
+            setTimeout(function () {
+                phoneArenaRatingsChart.load({
+                    columns: [
+                        ['Phone Arena Ratings', 0]
+                    ]
+                });
+            }, 0);
+
+            setTimeout(function () {
+                userRatingsChart.load({
+                    columns: [
+                        ['User Ratings', 0]
+                    ]
+                });
+            }, 0);
+        }
+
+        if (json[index].releaseDate == "unknown" || json[index].releaseDate == "" || json[index].announceDate == "unknown" || json[index].announceDate == "") {
+            setTimeout(function () {
+                sparklineChart.load({
+                    columns: [
+                        ['x', '2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
+                        ['price', 0, 0, 0, 0, 0, 0]
+                    ]
+                });
+            }, 500);
+        }
+
         // PhoneArena doesn't have correct scoring across all phones.
         var phonearenaRating = json[index].phonearenaRating;
         if (phonearenaRating > 10) phonearenaRating /= 10;
@@ -165,7 +212,7 @@ var onPhoneSelect = function (name) {
         var endDate = year + "-" + (month + 1) + "-" + (d.getDate() - 2);
 
         // URL for sparkline
-        var stockJsonUrl = "https://www.quandl.com/api/v1/datasets/GOOG/NASDAQ_GOOG.json?auth_token=dvyP1iucHz_BKyh_YD_e&trim_start=" + startDate + "&trim_end=" + endDate + "&column=4";
+        var stockJsonUrl = "https://www.quandl.com/api/v1/datasets/GOOG/" + stockUrlCode + ".json?auth_token=dvyP1iucHz_BKyh_YD_e&trim_start=" + startDate + "&trim_end=" + endDate + "&column=4";
         $.ajax({
             url: stockJsonUrl,
             async: true,
