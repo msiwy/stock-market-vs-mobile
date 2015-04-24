@@ -32,9 +32,10 @@ var retrieveSingleStockInfo = function (index, callback) {
         } else {
             phonearenaMarkers = phonearenaMarkers.concat(stockJson.map(function (d) {
                 return {
-                    value: parsePhoneDate(d.releaseDate), // some dates will be out of view
+                    value: parsePhoneDate(d.announceDate), // some dates will be out of view
                     text: d.name,
-                    stockSymbol: d.symbol
+                    class: d.symbol + "-marker"
+                    //stockSymbol: d.symbol
                     // imageUrl
                     // ratings
                     // release date?
@@ -85,9 +86,9 @@ buildTimeSeries = function () {
 
     /* NOW TO ACTUALLY MAKE THE CHART */
 
-    for (i=0; i<modData.length; i++) {
-        console.log(modData[i]);
-    }
+    //for (i=0; i<modData.length; i++) {
+    //    console.log(modData[i]);
+    //}
 
     var chart = c3.generate({
         bindto: '#chart',
@@ -143,4 +144,12 @@ buildTimeSeries = function () {
             show: true
         }
     });
+
+    updateTimeSeriesMarkers = function (value, checked) {
+        if (checked) {
+            d3.selectAll("." + value + "-marker").attr('display', 'inline');
+        } else {
+            d3.selectAll("." + value + "-marker").attr('display', 'none');
+        }
+    };
 };

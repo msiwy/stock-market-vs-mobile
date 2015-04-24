@@ -1,0 +1,52 @@
+// Phone info
+#phoneInfo.col-xs-3
+    h1
+    | #{phone}
+    //// Drop down menus
+    .btn-group
+        .btn-group
+        button.btn.btn-default.dropdown-toggle(data-toggle='dropdown')
+            | Phone:&nbsp;
+            span(data-label-placement='')
+            span.caret
+        ul.dropdown-menu(role="menu")
+            li.dropdown-header(role="presentation")
+                | Apple
+            each model in phoneData[0]
+                li(role="presentation")
+                    a(role="menuitem" tabindex="-1" href="./stacked-graph?phone=#{model.codename}")
+                        | #{model.name}
+            li.dropdown-header(role="presentation")
+                | Google
+            each model in phoneData[1]
+                li(role="presentation")
+                    a(role="menuitem" tabindex="-1" href="./stacked-graph?phone=#{model.codename}")
+                        | #{model.name}
+            li.dropdown-header(role="presentation")
+                | Motorola
+            each model in phoneData[3]
+                li(role="presentation")
+                    a(role="menuitem" tabindex="-1" href="./stacked-graph?phone=#{model.codename}")
+                        | #{model.name}
+
+    // Phone image
+    .container-fluid
+        #image.col-xs-8
+            img.img-rounded(src='')
+
+    // Description
+    .panel.panel-default
+        #panelHeading.panel-heading(role='tab')
+            h4.panel-title
+                a.collapsed(data-toggle='collapse', data-parent='#accordion', href='#infoAccordion', aria-expanded='false', aria-controls='infoAccordion')
+                    | Description
+        #infoAccordion.panel-collapse.collapse(role='tabpanel', aria-labelledby='panelHeading')
+            .panel-body
+                | info
+
+    // Ratings gauge chart
+    #phoneArenaRatings.col-xs-6
+    #userRatings.col-xs-6
+
+    // Sparkline from starting date
+    #sparkline

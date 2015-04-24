@@ -1,35 +1,36 @@
 extends layout
 
 block content
-  #chart
-  script(type="text/javascript" src="js/c3rework.js")
-  table.markerBoxes
-      td#box0
-          .fragment
-              span#boxClose0.closeX X
-              p.text
-                  | hi
-      td#box1
-          .fragment
-              span#boxClose1.closeX X
-              p.text
-                  | hi
-      td#box2
-          .fragment
-              span#boxClose2.closeX X
-              p.text
-                  | hi
-      td#box3
-          .fragment
-              span#boxClose3.closeX X
-              p.text
-                  | hi
-      td#box4
-          input(type='checkbox', name='vehicle', value='AAPL', checked, onclick='updateTimeSeriesMarkers(value, checked)')
-          | Apple
-          | &#x9;&#x9;
-          input(type='checkbox', name='vehicle', value='GOOG', checked, onclick='updateTimeSeriesMarkers(value, checked)')
-          | Google
-          | &#x9;&#x9;
-          input(type='checkbox', name='vehicle', value='MSI', checked, onclick='updateTimeSeriesMarkers(value, checked)')
-          | Motorola
+    #chart
+    table.markerBoxes
+        td#box0
+            .fragment
+                span#boxClose0.closeX X
+                p.text
+                    | hi
+        td#box1
+            .fragment
+                span#boxClose1.closeX X
+                p.text
+                    | hi
+        td#box2
+            .fragment
+                span#boxClose2.closeX X
+                p.text
+                    | hi
+        td#box3
+            .fragment
+                span#boxClose3.closeX X
+                p.text
+                    | hi
+        td#box4
+            input(type='checkbox', name='vehicle', value='AAPL', checked, onclick='updateTimeSeriesMarkers(value, checked)')
+            | Apple
+            | &#x9;&#x9;
+            input(type='checkbox', name='vehicle', value='GOOG', checked, onclick='updateTimeSeriesMarkers(value, checked)')
+            | Google
+            | &#x9;&#x9;
+            input(type='checkbox', name='vehicle', value='MSI', checked, onclick='updateTimeSeriesMarkers(value, checked)')
+            | Motorola
+
+    script(type="text/javascript" src="js/time-series.js")

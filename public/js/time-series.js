@@ -140,8 +140,7 @@ buildTimeSeries = function () {
             }
         },
         legend: {
-            show: true,
-            position: 'right'
+            show: true
         },
         zoom: {
             enabled: true,

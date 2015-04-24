@@ -82,3 +82,9 @@ img {
     background:#ccc;
     color:#fff;
 }
+
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+}

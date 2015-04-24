@@ -1,6 +1,7 @@
 [
     {
         "symbol": "AAPL",
+        "codename": "apple-iphone-6",
         "name": "Apple iPhone 6",
         "description": "The iPhone 6 represents Apple's second largest departure in terms of design since the iPhone 4, and ushers in an era of rounded aesthetics. Equipped with a 4.7-inch display, the iPhone 6 is also much larger than its predecessor, the iPhone 5s, but Apple has managed to trim some extra fat in order to make the new iPhone even thinner, at 0.27 in (6.9 mm). \n\nThe innards of the iPhone 6, too, went through improvements. The home-grown dual-core A8 processor is the third consecutive Apple chip to be custom-designed, and offers performance improvements of up to 25% and 50% in the of CPU and GPU departments respectively. The 8-megapixel, 1/3” iSight camera also received several upgrades, mostly on the software side, and now offers faster, phase detection auto focus, plus support for super-smooth 720p clips at the industry-leading 240 frames per second.",
         "phonearenaRating": "9",
