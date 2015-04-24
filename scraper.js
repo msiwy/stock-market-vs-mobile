@@ -12,14 +12,14 @@ var companies = ['Motorola', 'Apple', 'Microsoft', 'Sony', 'Blackberry', 'Google
  $('.s_lv_1').each(function (i, element) {
 
  var phone-data = $(this);
-     if (evenCounter++ % 2 == 0) {
-     specsList.push(phone-data.text());
-     }
+ if (evenCounter++ % 2 == 0) {
+ specsList.push(phone-data.text());
+ }
  });
  console.log(specsList);
  */
 
-var getUrls = function(company, callback) {
+var getUrls = function (company, callback) {
     /* GET URLS FOR EACH PHONE */
     var url = 'http://www.phonearena.com/phones/manufacturers/' + company + '/view/list/';
     var urls = [];
@@ -46,7 +46,7 @@ var getUrls = function(company, callback) {
             break;
     }
 
-    request(url, function(error, response, html) {
+    request(url, function (error, response, html) {
         if (error || response.statusCode != 200) {
             console.log('ERROR: ' + error.toString());
             return;
@@ -54,7 +54,7 @@ var getUrls = function(company, callback) {
 
         var $ = cheerio.load(html);
 
-        $('.s_block_1_s1').each(function(i, element) {
+        $('.s_block_1_s1').each(function (i, element) {
             var a = $(this);
             var image = a.find('.s_thumb').attr('href');
             var phoneName = a.children('h3').children().eq(0).attr('href');
@@ -62,14 +62,14 @@ var getUrls = function(company, callback) {
                 urls.push(phoneName);
             }
         });
-        callback(symbol, urls);
+        callback(symbol, company, urls);
     });
 };
 
-var phoneData = function(jsonDataArray, symbol, urls, index, callback) {
+var phoneData = function (jsonDataArray, symbol, company, urls, index, callback) {
     url = 'http://www.phonearena.com' + urls[index];
     console.log('RETRIEVING ', url);
-    request(url, function(error, response, html) {
+    request(url, function (error, response, html) {
         if (error || response.statusCode != 200) {
             console.log('ERROR: ' + error.toString());
             return;
@@ -79,6 +79,7 @@ var phoneData = function(jsonDataArray, symbol, urls, index, callback) {
 
         var json = {
             symbol: '',
+            company: "",
             name: '',
             description: '',
             phonearenaRating: '',
@@ -86,10 +87,12 @@ var phoneData = function(jsonDataArray, symbol, urls, index, callback) {
             announceDate: '',
             status: '',
             releaseDate: '',
-            imageUrl: ''
+            imageUrl: '',
+            weight: '',
+            size: '',
         };
 
-        $('#phone').filter(function() {
+        $('#phone').filter(function () {
             var data = $(this);
             var name = data.children('h1').children().eq(0).text();
             var description = data.find('.desc').text();
@@ -105,7 +108,11 @@ var phoneData = function(jsonDataArray, symbol, urls, index, callback) {
 
             var imageUrl = data.find('.lead').attr('href');
 
+            var weight = $('div.s_specs_box:nth-child(1) > ul:nth-child(2) > li:nth-child(4) > ul:nth-child(2) > li:nth-child(1)').text().replace(/(oz).*/, 'oz');
+            var size = $('#phone_specificatons > div:nth-child(3) > div:nth-child(2) > ul:nth-child(2) > li:nth-child(1) > ul:nth-child(2) > li:nth-child(1)').text().replace(/(inches).*/, 'inches');
+
             json.symbol = symbol;
+            json.company = company;
             json.name = name;
             json.description = description;
             json.phonearenaRating = phonearenaRating;
@@ -114,16 +121,19 @@ var phoneData = function(jsonDataArray, symbol, urls, index, callback) {
             json.status = status;
             json.releaseDate = releaseDate;
             json.imageUrl = imageUrl;
+            json.weight = weight;
+            json.size = size;
+
         });
         jsonDataArray.push(json);
         callback(jsonDataArray);
     });
 };
 
-var retrieveData = function(jsonDataArray, symbol, urls, callback) {
+var retrieveData = function (jsonDataArray, symbol, company, urls, callback) {
     console.log('Retrieving info for each phone', urls.length);
     for (var index = 0; index < urls.length; index++) {
-        phoneData(jsonDataArray, symbol, urls, index, callback);
+        phoneData(jsonDataArray, symbol, company, urls, index, callback);
     }
 };
 
@@ -147,72 +157,72 @@ var retrieveData = function(jsonDataArray, symbol, urls, callback) {
 /*  @TODO I am still not good with javascript... mutable variable? Couldn't run for loop */
 // @TODO callback hell
 // Generate a file for each company.
-getUrls(companies[0], function(symbol, urls) {
+getUrls(companies[0], function (symbol, company, urls) {
     var jsonDataArray = [];
-    retrieveData(jsonDataArray, symbol, urls, function(jsonDataArray) {
+    retrieveData(jsonDataArray, symbol, company, urls, function (jsonDataArray) {
         /*OUTPUT TO JSON */
         if (jsonDataArray.length == urls.length) {
-            fs.writeFile('./public/data/' + companies[0] + '.json', JSON.stringify(jsonDataArray, null, 4), function(err) {
+            fs.writeFile('./public/data/' + companies[0] + '.json', JSON.stringify(jsonDataArray, null, 4), function (err) {
                 console.log('File successfully written! - Check output.');
             });
         }
     })
 });
 
-getUrls(companies[1], function(symbol, urls) {
+getUrls(companies[1], function (symbol, company, urls) {
     var jsonDataArray = [];
-    retrieveData(jsonDataArray, symbol, urls, function(jsonDataArray) {
+    retrieveData(jsonDataArray, symbol, company, urls, function (jsonDataArray) {
         /* OUTPUT TO JSON */
         if (jsonDataArray.length == urls.length) {
-            fs.writeFile('./public/data/' + companies[1] + '.json', JSON.stringify(jsonDataArray, null, 4), function(err) {
+            fs.writeFile('./public/data/' + companies[1] + '.json', JSON.stringify(jsonDataArray, null, 4), function (err) {
                 console.log('File successfully written! - Check output.');
             });
         }
     })
 });
 
-getUrls(companies[2], function(symbol, urls) {
+getUrls(companies[2], function (symbol, company, urls) {
     var jsonDataArray = [];
-    retrieveData(jsonDataArray, symbol, urls, function(jsonDataArray) {
+    retrieveData(jsonDataArray, symbol, company, urls, function (jsonDataArray) {
         /* OUTPUT TO JSON */
         if (jsonDataArray.length == urls.length) {
-            fs.writeFile('./public/data/' + companies[2] + '.json', JSON.stringify(jsonDataArray, null, 4), function(err) {
+            fs.writeFile('./public/data/' + companies[2] + '.json', JSON.stringify(jsonDataArray, null, 4), function (err) {
                 console.log('File successfully written! - Check output.');
             });
         }
     })
 });
 
-getUrls(companies[3], function(symbol, urls) {
+getUrls(companies[3], function (symbol, company, urls) {
     var jsonDataArray = [];
-    retrieveData(jsonDataArray, symbol, urls, function(jsonDataArray) {
+    retrieveData(jsonDataArray, symbol, company, urls, function (jsonDataArray) {
         /* OUTPUT TO JSON */
         if (jsonDataArray.length == urls.length) {
-            fs.writeFile('./public/data/' + companies[3] + '.json', JSON.stringify(jsonDataArray, null, 4), function(err) {
+            fs.writeFile('./public/data/' + companies[3] + '.json', JSON.stringify(jsonDataArray, null, 4), function (err) {
                 console.log('File successfully written! - Check output.');
             });
         }
     })
 });
 
-getUrls(companies[4], function(symbol, urls) {
+getUrls(companies[4], function (symbol, company, urls) {
     var jsonDataArray = [];
-    retrieveData(jsonDataArray, symbol, urls, function(jsonDataArray) {
+    retrieveData(jsonDataArray, symbol, company, urls, function (jsonDataArray) {
         /* OUTPUT TO JSON */
         if (jsonDataArray.length == urls.length) {
-            fs.writeFile('./public/data/' + companies[4] + '.json', JSON.stringify(jsonDataArray, null, 4), function(err) {
+            fs.writeFile('./public/data/' + companies[4] + '.json', JSON.stringify(jsonDataArray, null, 4), function (err) {
                 console.log('File successfully written! - Check output.');
             });
         }
     })
 });
 
-getUrls(companies[5], function(symbol, urls) {
+getUrls(companies[5], function (symbol, company, urls) {
     var jsonDataArray = [];
-    retrieveData(jsonDataArray, symbol, urls, function(jsonDataArray) {
+    retrieveData(jsonDataArray, symbol, company, urls, function (jsonDataArray) {
         /* OUTPUT TO JSON */
         if (jsonDataArray.length == urls.length) {
-            fs.writeFile('./public/data/' + companies[5] + '.json', JSON.stringify(jsonDataArray, null, 4), function(err) {
+            fs.writeFile('./public/data/' + companies[5] + '.json', JSON.stringify(jsonDataArray, null, 4), function (err) {
                 console.log('File successfully written! - Check output.');
             });
         }

@@ -37,6 +37,12 @@ path {
     stroke: #000;
 }
 
+img {
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+}
+
 .fragment {
     font-size: 12px;
     font-family: sans-serif;
