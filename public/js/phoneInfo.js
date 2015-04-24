@@ -1,27 +1,3 @@
-var onPhoneSelect = function () {
-
-    var div = document.getElementById('phoneInfo');
-    $.getJSON('phone-data/Google.json', function (json) {
-        /* LOAD PHONE INFORMATION TO HTML */
-        // Image
-        var imageUrl = "<image src=\"http:" + json[0].imageUrl + "\" class = \"img-rounded\">";
-        var image = document.getElementById('image');
-        image.innerHTML = imageUrl;
-
-        // Company name
-        var company = document.getElementById('company');
-        company.innerHTML = json[0].symbol;
-
-        // Phone name
-        var phone = document.getElementById('name');
-        phone.innerHTML = json[0].name;
-
-        // Phone description
-        var description = document.getElementById('description');
-        description.innerHTML = json[0].description;
-    });
-};
-
 /* RATINGS GAUGE CHARTS */
 var phoneArenaRatingsChart = c3.generate({
     bindto: '#phoneArenaRatings',
@@ -132,5 +108,56 @@ setTimeout(function () {
     });
 }, 4000);
 
+/* UPDATE PHONE INFO ON SELECT */
+var onPhoneSelect = function(name) {
 
-onPhoneSelect();
+    var div = document.getElementById('phoneInfo');
+    $.getJSON('phone-data/Google.json', function(json) {
+        /* LOAD PHONE INFORMATION TO HTML */
+        // Find the appropriate index of the phone
+        var index = 0;
+        for (var i = 0; i < json.length; i++) {
+            if (json[i].name == name) {
+                index = i;
+                break;
+            }
+        }
+
+        // Image
+        var imageUrl = "<image src=\"http:" + json[index].imageUrl + "\" class = \"img-rounded\">";
+        var image = document.getElementById('image');
+        image.innerHTML = imageUrl;
+
+        // Company name
+        var company = document.getElementById('company');
+        company.innerHTML = json[index].symbol;
+
+        // Phone name
+        var phone = document.getElementById('name');
+        phone.innerHTML = json[index].name;
+
+        // Phone description
+        var description = document.getElementById('description');
+        description.innerHTML = json[index].description;
+
+        // Update scores
+        setTimeout(function() {
+            phoneArenaRatingsChart.load({
+                hide: false,
+                columns: [
+                    ['data', json[index].phonearenaRating]
+                ]
+            });
+        }, 1000);
+
+        setTimeout(function() {
+            userRatingsChart.load({
+                hide: false,
+                columns: [
+                    ['data', json[index].userRating]
+                ]
+            });
+        }, 2000);
+
+    });
+};
