@@ -1,77 +1,35 @@
 extends layout
 
 block content
-
-    // Gridline filter
-    .row.col-xs-offset-1
-        input(type='checkbox', name='vehicle', value='AAPL', checked, onclick='updateTimeSeriesMarkers(value, checked)')
-        |  AAPL
-        | &#x9;&#x9;
-        input(type='checkbox', name='vehicle', value='GOOG', checked, onclick='updateTimeSeriesMarkers(value, checked)')
-        |  GOOG
-        | &#x9;&#x9;
-        input(type='checkbox', name='vehicle', value='MSI', checked, onclick='updateTimeSeriesMarkers(value, checked)')
-        |  MSI
-
-    // Time series
-    #chart.col-xs-8.col-md-8.col-sm-8
-
-    // Phone info
-    #phoneInfo.col-xs4.col.md-4.col-sm-4
-
-        // Drop down menus
-        .btn-group.col-xs-5
-            button.btn.btn-default.dropdown-toggle(data-toggle='dropdown')
-                | Company:&nbsp;
-                span(data-label-placement='')
-                span.caret
-            ul.dropdown-menu
-                li
-                    input#apple(type='radio', name='company', value='1', checked='')
-                    label(for='apple')  Apple
-                li
-                    input#motorola(type='radio', name='company', value='2')
-                    label(for='motorola')  Motorola
-                li
-                    input#google(type='radio', name='company', value='3')
-                    label(for='google')  Google
-        .col-xs-1
-        .btn-group.col-xs-5
-            button.btn.btn-default.dropdown-toggle(data-toggle='dropdown')
-                | Model:&nbsp;
-                span(data-label-placement='')
-                span.caret
-            #modelList.ul.dropdown-menu
-                li
-                    input#ex5_1(type='radio', name='ex5', value='1')
-                    label(for='ex5_1') Option1
-                li
-                    input#ex5_2(type='radio', name='ex5', value='2')
-                    label(for='ex5_2') Option2
-
-        // Phone image
-        .container-fluid
-            #image.col-xs-8
-                img.img-rounded(src='')
-
-        // Description
-        .panel.panel-default
-            #panelHeading.panel-heading(role='tab')
-                h4.panel-title
-                    a.collapsed(data-toggle='collapse', data-parent='#accordion', href='#infoAccordion', aria-expanded='false', aria-controls='infoAccordion')
-                        | Description
-            #infoAccordion.panel-collapse.collapse(role='tabpanel', aria-labelledby='panelHeading')
-                .panel-body
-                    | info
-
-        // Ratings gauge chart
-        #phoneArenaRatings.col-xs-6
-        #userRatings.col-xs-6
-
-        // Sparkline from starting date
-        #sparkline
-
-    script(type="text/javascript" src="js/c3rework.js")
-    script(type="text/javascript" src="js/phoneInfo.js")
-
-
+  #chart
+  script(type="text/javascript" src="js/c3rework.js")
+  table.markerBoxes
+      td#box0
+          .fragment
+              span#boxClose0.closeX X
+              p.text
+                  | hi
+      td#box1
+          .fragment
+              span#boxClose1.closeX X
+              p.text
+                  | hi
+      td#box2
+          .fragment
+              span#boxClose2.closeX X
+              p.text
+                  | hi
+      td#box3
+          .fragment
+              span#boxClose3.closeX X
+              p.text
+                  | hi
+      td#box4
+          input(type='checkbox', name='vehicle', value='AAPL', checked, onclick='updateTimeSeriesMarkers(value, checked)')
+          | Apple
+          | &#x9;&#x9;
+          input(type='checkbox', name='vehicle', value='GOOG', checked, onclick='updateTimeSeriesMarkers(value, checked)')
+          | Google
+          | &#x9;&#x9;
+          input(type='checkbox', name='vehicle', value='MSI', checked, onclick='updateTimeSeriesMarkers(value, checked)')
+          | Motorola
