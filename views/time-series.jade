@@ -2,39 +2,46 @@ extends layout
 
 block content
 
-  #chart
+  #chart.col-xs-12
   script(type="text/javascript" src="js/time-series.js")
   table.markerBoxes
-      td#box0
+      td#box0(style="display:none;")
           .fragment
               span#boxClose0.closeX X
               p.text
                   | hi
-      td#box1
+      td#box1(style="display:none;")
           .fragment
               span#boxClose1.closeX X
               p.text
                   | hi
-      td#box2
+      td#box2(style="display:none;")
           .fragment
               span#boxClose2.closeX X
               p.text
                   | hi
-      td#box3
+      td#box3(style="display:none;")
           .fragment
               span#boxClose3.closeX X
               p.text
                   | hi
       td#box4
-          input(type='checkbox', name='vehicle', value='AAPL', checked, onclick='updateTimeSeriesMarkers(value, checked)')
-          | Apple
-          | &#x9;&#x9;
-          input(type='checkbox', name='vehicle', value='GOOG', checked, onclick='updateTimeSeriesMarkers(value, checked)')
-          | Google
-          | &#x9;&#x9;
-          input(type='checkbox', name='vehicle', value='MSI', checked, onclick='updateTimeSeriesMarkers(value, checked)')
-          | Motorola
-          | &#x9;&#x9;
-          input(type='checkbox', name='vehicle', value='SNE', checked, onclick='updateTimeSeriesMarkers(value, checked)')
-          | Sony
+          .panel.panel-default
+                .panel-heading
+                    .panel-title
+                        h3
+                        | Event Flags
+                .panel-body
+                    input(type='checkbox', name='vehicle', value='AAPL', checked, onclick='updateTimeSeriesMarkers(value, checked)')
+                    | Apple
+                    | &#x9;&#x9;
+                    input(type='checkbox', name='vehicle', value='GOOG', checked, onclick='updateTimeSeriesMarkers(value, checked)')
+                    | Google
+                    | &#x9;&#x9;
+                    input(type='checkbox', name='vehicle', value='MSI', checked, onclick='updateTimeSeriesMarkers(value, checked)')
+                    | Motorola
+                    | &#x9;&#x9;
+                    input(type='checkbox', name='vehicle', value='SNE', checked, onclick='updateTimeSeriesMarkers(value, checked)')
+                    | Sony
 
+            

@@ -171,12 +171,6 @@ buildTimeSeries = function () {
     };
 
     $(document).ready(function () {
-        // Hide all the boxes on load
-        $("#box0").hide();
-        $("#box1").hide();
-        $("#box2").hide();
-        $("#box3").hide();
-
         // If a box becomes visible, clicking the X will hide it
         $("#boxClose0").click(function(){
             $("#box0").hide();
