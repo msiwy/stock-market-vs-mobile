@@ -111,7 +111,7 @@ buildTimeSeries = function () {
                     format: '%Y-%m-%d',
                     count: 20
                 }
-            },
+            }
         },
         grid: {
             x: {
