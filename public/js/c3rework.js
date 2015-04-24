@@ -13,10 +13,13 @@ var xValuesMs = [];
 var sources = ["https://www.quandl.com/api/v1/datasets/GOOG/NASDAQ_AAPL.json?auth_token=BF_415Fh7xADmmnHJDEs&trim_start=2012-04-22&column=4",
     "https://www.quandl.com/api/v1/datasets/GOOG/NYSE_MSI.json?auth_token=BF_415Fh7xADmmnHJDEs&trim_start=2012-04-22&column=4",
     "https://www.quandl.com/api/v1/datasets/GOOG/NASDAQ_GOOG.json?auth_token=BF_415Fh7xADmmnHJDEs&trim_start=2012-04-22&column=4",
+    "https://www.quandl.com/api/v1/datasets/GOOG/NYSE_SNE.json?auth_token=BF_415Fh7xADmmnHJDEs&trim_start=2012-04-22&column=4",
     "../phone-data/Apple.json",
     "../phone-data/Google.json",
-    "../phone-data/Motorola.json"];    
+    "../phone-data/Motorola.json",
+    "../phone-data/Sony.json"];    
 
+// Filtering JSON results
 var retrieveSingleStockInfo = function (index, callback) {
     d3.json(sources[index], function (error, stockJson) {
         if (stockJson.code) {
@@ -34,15 +37,13 @@ var retrieveSingleStockInfo = function (index, callback) {
 
             lineData[index].values = stockData;
         } else {
+            // Storing all the phone announcement markers into an array
             phonearenaMarkers = phonearenaMarkers.concat(stockJson.map(function (d) {
                 return {
-                    value: parsePhoneDate(d.announceDate), // some dates will be out of view
+                    value: parsePhoneDate(d.announceDate), 
                     text: d.name,
                     class: d.symbol + "-marker",
                     stockSymbol: d.symbol
-                    // imageUrl
-                    // ratings
-                    // release date?
                 };
             }));
             phonearenaCount++;
@@ -62,16 +63,15 @@ var fetchJSON = function (callback) {
 fetchJSON(function () {
     /* OUTPUT TO JSON */
     // sources.length MINUES NUM OF JSON FILES!!!
-    if (lineData.length == sources.length - 3 && lineData[0] != null && lineData[1] != null && lineData[2] != null && !finished &&
-        phonearenaCount == 3) {
+    if (lineData.length == sources.length - 4 && lineData[0] != null && lineData[1] != null && lineData[2] != null && lineData[3] != null  && !finished &&
+        phonearenaCount == 4) {
         buildTimeSeries();
         finished = true;
     }
 });
 
 buildTimeSeries = function () {
-    // REWORK THIS IF TIME PERMITS ---  
-
+    // Formating JSON results to meet C3.js data requirements. ['dataLabel', value1, value2, .....]
     lineData.forEach(function (d, i) {
         var item = [d.key];
         var xDate = [d.key + "x"];
@@ -79,14 +79,13 @@ buildTimeSeries = function () {
         d.values.forEach(function (j) {
             item.push(j.pricej);
             xDate.push(j.datej);
-            xDateMs.push(j.datej.getTime());
+            xDateMs.push(j.datej.getTime()); // Getting time in miliseconds to compare dates
         });
 
         modData.push(item);
         xValues.push(xDate);
         xValuesMs.push(xDateMs); // Pushing time in miliseconds to compare dates
     });
-    // ------------------------------
 
     var chart = c3.generate({
         bindto: '#chart',
@@ -95,27 +94,35 @@ buildTimeSeries = function () {
         },
         data: {
             xs: {
-                "NASDAQ_AAPL": "NASDAQ_AAPLx",
+                // y-values modData[i] are paired with x-values xValues[i]
+                "NASDAQ_AAPL": "NASDAQ_AAPLx", 
                 "NYSE_MSI": "NYSE_MSIx",
-                "NASDAQ_GOOG": "NASDAQ_GOOGx"
+                "NASDAQ_GOOG": "NASDAQ_GOOGx",
+                "NYSE_SNE": "NYSE_SNEx"
             },
             columns: [
                 modData[0], // ["NASDAQ_AAPL", 564, 566, ...]
                 modData[1],
                 modData[2],
+                modData[3],
                 xValues[0], // ["NASDAQ_AAPLx", 2015-01-13, .....]
                 xValues[1],
-                xValues[2]
+                xValues[2],
+                xValues[3]
             ],
             names: {
+                // Rename legend values
                 NASDAQ_AAPL: 'Apple',
                 NYSE_MSI: 'Motorola',
-                NASDAQ_GOOG: 'Google'
-            },
-            selection: {
-                enabled: true
+                NASDAQ_GOOG: 'Google',
+                NYSE_SNE: 'Sony'
             },
             onclick: function (d, element) { 
+                /*
+                 Selecting a data point finds the closest event marker in the past for the corresponding stock.
+                 A box then appears with information relating to stock changes in relation to that marker as well at 
+                 the data point selected. There is a limit of 4 boxes, but they can be closed by the user
+                */
                 showStockMarkerBox(findClosestMarker(d), d);
             }
         },
@@ -136,7 +143,8 @@ buildTimeSeries = function () {
         },
         grid: {
             x: {
-                lines: phonearenaMarkers
+                // Vertical dashed lines on the chart indicate phone announcemnet dates
+                lines: phonearenaMarkers 
             }
         },
         legend: {
@@ -144,11 +152,13 @@ buildTimeSeries = function () {
             position: 'right'
         },
         zoom: {
-            enabled: true,
+            // You are able to zoom with use of the mousewheel
+            enabled: true, 
             rescale: true
         },
         subchart: {
-            show: true
+            // Brushing chart below the main time series
+            show: true 
         }
     });
 
@@ -190,20 +200,17 @@ buildTimeSeries = function () {
         });
     });
 
+    // Determines if a marker box should be shown and displays if it should
     showStockMarkerBox = function(closestMarker, dataPoint) {
         if (closestMarker) {
-            console.log(closestMarker);
             var showBoxSuccess = false;
             for (var i = 0; i < stockMarkerBoxes.length; i++) {
                 if (stockMarkerBoxes[i] === "hidden") {
-                    // set the color of the border to match the stock
                     stockMarkerBoxes[i] = "visible";
                     showBoxSuccess = true;
                     $("#box" + i).show();
                     // stockText = [Announce day price, Price diff. 1 day, Price diff. 1 week, Price diff. 1 month]
                     var stockText = calcMarkerBoxInfo(closestMarker, dataPoint);
-                    console.log(stockText);
-                    //$("#box" + i + " p").html(closestMarker.text);
                     $("#box" + i + " p").html(function() {
                         var htmlString ="<p>" + closestMarker.text + "</p>" +
                                         "<p>Price on event: " + stockText[0] + "</p>" +
@@ -214,12 +221,6 @@ buildTimeSeries = function () {
                         return htmlString;
                     });
 
-
-                    $( "div.demo-container" ).html(function() {
-                      var emphasis = "<em>" + $( "p" ).length + " paragraphs!</em>";
-                      return "<p>All new content for " + emphasis + "</p>";
-                    });
-
                     return;
                 }
             }
@@ -228,11 +229,12 @@ buildTimeSeries = function () {
                 console.log("Boxes full!")
             }
         } else {
-            // do nothing
+            // Should never be reached
             console.log("no marker found");
         }
     };
 
+    // Finds the closest event marker prior to the data point selected and with the same company
     findClosestMarker = function(dataPoint) {
         var dataPointDate = dataPoint.x,
             dataPointSymbol = dataPoint.id;
@@ -240,17 +242,15 @@ buildTimeSeries = function () {
         for (var i = 0; i < phonearenaMarkers.length; i++) {
             // Check for marker with same stock symbol and closest marker prior to data point
             if (dataPointSymbol.includes(phonearenaMarkers[i].stockSymbol) && (phonearenaMarkers[i].value <= dataPointDate)) {
-                // !!!!IMPORTANT!!!! - the PhoneArena json files must stay ordered by announcementDate
-                // TODO - make sure marker is within stock request range
                 return phonearenaMarkers[i];
             }
         }            
     };
 
+    // Calculates the info to display in the marker box
     calcMarkerBoxInfo = function(closestMarker, dataPoint) {
         var boxInfo = [];
         if (dataPoint.id === "NASDAQ_AAPL") {
-            // TODO - add bounds checking on array
             var markerDateIndex = xValuesMs[0].indexOf(closestMarker.value.getTime()),
                 dataPointDateIndex = xValuesMs[0].indexOf(dataPoint.x.getTime()),
                 dataPointDayPrice = modData[0][dataPointDateIndex],
@@ -265,7 +265,6 @@ buildTimeSeries = function () {
         }
 
         if (dataPoint.id === "NYSE_MSI") {
-            // TODO - add bounds checking on array
             var markerDateIndex = xValuesMs[1].indexOf(closestMarker.value.getTime()),
                 dataPointDateIndex = xValuesMs[1].indexOf(dataPoint.x.getTime()),
                 dataPointDayPrice = modData[1][dataPointDateIndex],
@@ -280,7 +279,6 @@ buildTimeSeries = function () {
         }
 
         if (dataPoint.id === "NASDAQ_GOOG") {
-            // TODO - add bounds checking on array
             var markerDateIndex = xValuesMs[2].indexOf(closestMarker.value.getTime()),
                 dataPointDateIndex = xValuesMs[2].indexOf(dataPoint.x.getTime()),
                 dataPointDayPrice = modData[2][dataPointDateIndex],
@@ -288,6 +286,20 @@ buildTimeSeries = function () {
                 nextDayPrice = modData[2][markerDateIndex + 1],
                 nextWeekPrice = modData[2][markerDateIndex + 5], // Roughly next business week 
                 nextMonthPrice = modData[2][markerDateIndex + 26]; // Roughly next business month 
+
+            // [Announce day price, Price diff. 1 day, Price diff. 1 week, Price diff. 1 month]    
+            boxInfo = [announceDayPrice, (nextDayPrice - announceDayPrice).toFixed(2), (nextWeekPrice - announceDayPrice).toFixed(2),
+                        (nextMonthPrice - announceDayPrice).toFixed(2), (dataPointDayPrice - announceDayPrice).toFixed(2)];    
+        }
+
+        if (dataPoint.id === "NYSE_SNE") {
+            var markerDateIndex = xValuesMs[3].indexOf(closestMarker.value.getTime()),
+                dataPointDateIndex = xValuesMs[3].indexOf(dataPoint.x.getTime()),
+                dataPointDayPrice = modData[3][dataPointDateIndex],
+                announceDayPrice = modData[3][markerDateIndex],
+                nextDayPrice = modData[3][markerDateIndex + 1],
+                nextWeekPrice = modData[3][markerDateIndex + 5], // Roughly next business week 
+                nextMonthPrice = modData[3][markerDateIndex + 26]; // Roughly next business month 
 
             // [Announce day price, Price diff. 1 day, Price diff. 1 week, Price diff. 1 month]    
             boxInfo = [announceDayPrice, (nextDayPrice - announceDayPrice).toFixed(2), (nextWeekPrice - announceDayPrice).toFixed(2),
