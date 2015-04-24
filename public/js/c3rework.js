@@ -10,7 +10,8 @@ var sources = ["https://www.quandl.com/api/v1/datasets/GOOG/NASDAQ_AAPL.json?aut
     "https://www.quandl.com/api/v1/datasets/GOOG/NYSE_MSI.json?auth_token=BF_415Fh7xADmmnHJDEs&trim_start=2012-04-22&column=4",
     "https://www.quandl.com/api/v1/datasets/GOOG/NASDAQ_GOOG.json?auth_token=BF_415Fh7xADmmnHJDEs&trim_start=2012-04-22&column=4",
     "../phone-data/Apple.json",
-    "../phone-data/Google.json"];    
+    "../phone-data/Google.json",
+    "../phone-data/Motorola.json"];    
 
 var retrieveSingleStockInfo = function (index, callback) {
     d3.json(sources[index], function (error, stockJson) {
@@ -33,7 +34,8 @@ var retrieveSingleStockInfo = function (index, callback) {
                 return {
                     value: parsePhoneDate(d.announceDate), // some dates will be out of view
                     text: d.name,
-                    stockSymbol: d.symbol
+                    class: d.symbol + "-marker"
+                    //stockSymbol: d.symbol
                     // imageUrl
                     // ratings
                     // release date?
@@ -56,8 +58,8 @@ var fetchJSON = function (callback) {
 fetchJSON(function () {
     /* OUTPUT TO JSON */
     // sources.length MINUES NUM OF JSON FILES!!!
-    if (lineData.length == sources.length - 2 && lineData[0] != null && lineData[1] != null && lineData[2] != null && !finished &&
-        phonearenaCount == 2) {
+    if (lineData.length == sources.length - 3 && lineData[0] != null && lineData[1] != null && lineData[2] != null && !finished &&
+        phonearenaCount == 3) {
         buildTimeSeries();
         finished = true;
     }
@@ -109,7 +111,7 @@ buildTimeSeries = function () {
                     format: '%Y-%m-%d',
                     count: 20
                 }
-            },
+            }
         },
         grid: {
             x: {
@@ -128,6 +130,15 @@ buildTimeSeries = function () {
             show: true
         }
     });
+
+    updateTimeSeriesMarkers = function (value, checked) {
+        if (checked) {
+            d3.selectAll("." + value + "-marker").attr('display', 'inline');
+        } else {
+            d3.selectAll("." + value + "-marker").attr('display', 'none');
+        }
+    };
+
 };
 
 
