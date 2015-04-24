@@ -1,5 +1,57 @@
 extends layout
 
 block content
-    #chart
+
+    // Gridline filter
+    #filtering.col-xs-1
+        .row
+            .panel.panel-default
+                .panel-heading
+                    .panel-title
+                        h3
+                        | Event Flags
+                .panel-body
+                    .checkbox(padding-left="5px")
+                        input(type='checkbox', value='AAPL', checked, onclick='updateTimeSeriesMarkers(value, checked)')
+                        |  #{phoneData[0][0].symbol}
+                    .checkbox(padding-left="5px")
+                        input(type='checkbox', value='GOOG', checked, onclick='updateTimeSeriesMarkers(value, checked)')
+                        |  #{phoneData[1][0].symbol}
+                    .checkbox(padding-left="5px")
+                        input(type='checkbox', value='MSI', checked, onclick='updateTimeSeriesMarkers(value, checked)')
+                        |  #{phoneData[3][0].symbol}
+
+    // Time series
+    #chart.col-xs-9
+
+    // Phone info
+    #phoneInfo.col-xs-2
+        .panel.panel-primary
+            .panel-body.fixed-panel
+                ul
+                each model in phoneData[0]
+                    li
+                        a(role="menuitem" tabindex="-1" href="#" onclick='onPhoneSelect("#{model.name}")')
+                            | #{model.name}
+        // Phone image
+        .container-fluid
+            #image.col-xs-12
+                img.img-rounded(src='')
+        // Description
+        //.panel.panel-default
+        //    #panelHeading.panel-heading(role='tab')
+        //        h4.panel-title
+        //            a.collapsed(data-toggle='collapse', data-parent='#accordion', href='#infoAccordion', aria-expanded='false', aria-controls='infoAccordion')
+        //                | Description
+        //    #infoAccordion.panel-collapse.collapse(role='tabpanel', aria-labelledby='panelHeading')
+        //        .panel-body
+        //            | info
+        // Ratings gauge chart
+        #phoneArenaRatings.col-xs-6
+        #userRatings.col-xs-6
+        // Sparkline from starting date
+        #sparkline
+
     script(type="text/javascript" src="js/stacked-graph.js")
+    script(type="text/javascript" src="js/phoneInfo.js")
+

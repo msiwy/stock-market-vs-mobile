@@ -1,6 +1,7 @@
 [
     {
         "symbol": "AAPL",
+<<<<<<< Updated upstream
         "company": "Apple",
         "name": "Apple iPad mini 3",
         "description": "The iPad mini 3 is Apple's third-generation mini tablet, although technically, it is almost identical to its predecessor. The device offers a 7.9-inch Retina Display with a resolution of 2048 by 1536 pixels. Processing power is provided by an Apple-designed A7 system-on-chip, and up to 128GB of storage are available for storing files and media. In charge is the latest version of iOS, Apple's mobile operating system. All this is housed in a lightweight, 7.5-millimeter thin body made of premium aluminium. Unlike its predecessor, the iPad mini 3 has a Touch ID fingerprint scanner built into its home button.",
@@ -35,6 +36,74 @@
         "phonearenaRating": "9",
         "userRating": "98.5",
         "announceDate": "Sep 12, 2012",
+=======
+        "codename": "apple-ipad",
+        "name": "Apple iPad",
+        "description": "Apple iPad is a 9.7-inch tablet that fills the gap between the iPhone and the Mac. There are 16, 32 or 64-gigabyte versions, each sporting a 1GHz Apple A4 processor and running Apple's iOS operating system, Wi-Fi 802.11n and Bluetooth 2.1 + EDR. The battery of the iPad is rated to be able to hold up for a month in standby and 10 hours of use time.",
+        "phonearenaRating": "8",
+        "userRating": "87.5",
+        "announceDate": "Jan 27, 2010",
+        "status": "Released",
+        "releaseDate": "Apr  3, 2010",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/22488-large/Apple-iPad.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "codename": "apple-iphone-4",
+        "name": "Apple iPhone 4",
+        "description": "The iPhone 4 is now boxier, with the rear side now flat, instead of rounded.  It will keep the 3.5-inch display diagonal, but will quadruple the pixels to 640x960, making it the highest-resolution screen on a smartphone to date. Apple actually calls the new screen Retina Display, because it shows 326 pixels per inch, while the human eye can only distinguish around 300 ppi. In addition, the screen will utilize the LCD IPS  technology (same as in the iPad). The other new stuff includes a front-facing video call camera, 5MP main camera lens with LED flash and 720p HD video recording, Micro-SIM slot, instead of ordinary SIM, a secondary mic for noise-cancellation and a lot of other new features.",
+        "phonearenaRating": "95",
+        "userRating": "9.58.2",
+        "announceDate": "Jun  7, 2010",
+        "status": "Released",
+        "releaseDate": "Jun 24, 2010",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/21284-large/Apple-iPhone-4.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "codename": "apple-ipad-2",
+        "name": "Apple iPad 2",
+        "description": "The second generation of Apple's venerable tablet - iPad 2 - improves on its predecessor in both design and hardware. The iconic tablet is now thinner even than the iPhone 4 at 0.34\" (8.8mm), and weighs just 1.35 pounds (613 grams). The big changes on the inside is the 1 GHz dual-core Apple A5 chipset, which provides 2x the CPU and 9x the GPU performance of its predecessor. All that while keeping the same 10 hours of battery life. Dressed entirely in black or white this time, the iPad 2 also sports HDMI output via a separate cable, as well as rear and front-facing cams, plus a bunch of new cool accessories.",
+        "phonearenaRating": "85",
+        "userRating": "8.58.8",
+        "announceDate": "Mar  2, 2011",
+        "status": "Released",
+        "releaseDate": "Mar 11, 2011",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/27191-large/Apple-iPad-2.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "codename": "apple-iphone-5c",
+        "name": "Apple iPhone 5c",
+        "description": "The iPhone 5c replaces the iPhone 5 in the Apple stable, inheriting its internals, like the A6 processor, 4\" screen and 8 MP camera, but wraps them up in \"unapologetically plastic\" candy chassis that can be mixed and matched in many colors with the new slotted cases. It is Apple's first take at the upper mid-range concept, and runs the newest iOS 7 without a hitch.",
+        "phonearenaRating": "9",
+        "userRating": "99",
+        "announceDate": "Sep 10, 2013",
+        "status": "Released",
+        "releaseDate": "Sep 20, 2013",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/42880-xlarge/Apple-iPhone-5c.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "codename": "apple-ipad-mini",
+        "name": "Apple iPad mini",
+        "description": "The iPad mini is a thinner, lighter, cheaper variant of the iPad as we know it, with a smaller screen and form factor that makes it even more portable than its larger sibling. Thanks to its 4:3 aspect ratio, the iPad mini is actually superior to 7-inch tablets with a wide ratio. That is due to the more surface area available on the device's screen, which results in a richer web browsing experience.",
+        "phonearenaRating": "85",
+        "userRating": "8.5",
+        "announceDate": "Oct 23, 2012",
+        "status": "Released",
+        "releaseDate": "Nov  2, 2012",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/38591-xlarge/Apple-iPad-mini.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "codename": "apple-iphone-5s",
+        "name": "Apple iPhone 5s",
+        "description": "The iPhone 5s is not a radical departure in design for Apple, save for one very important feature. No, we don't mean the new Space Gray and Gold colors. We have in mind the home button that has been on iPhones from day one, is now turned into a fingerprint scanner dubbed Touch ID. It lets you unlock the phone and authorize purchases, safely storing your fingerprints in the A7 processor itself, out of the reach for anyone but a few default iOS 7 apps.\n\nThis A7 processor debuts on the iPhone 5s as the first 64-bit mobile chipset in use on a commercial device, utilized by the latest flat and minimalistic iOS 7 that has been rewritten to take advantage of the 64-bit system. It sports a dedicated M7 co-processor for always-on motion sensing, too.\n\nThe iSight camera stayed 8 MP, but is much improved, with larger pixels, wider aperture, and the ability to shoot slow motion videos, not to mention the dual two-tone LED flash on the back that strives for natural skin color representation.",
+        "phonearenaRating": "93",
+        "userRating": "9.38.7",
+        "announceDate": "Sep 10, 2013",
+>>>>>>> Stashed changes
         "status": "Released",
         "releaseDate": "Sep 21, 2012",
         "imageUrl": "//i-cdn.phonearena.com/images/phones/37986-xlarge/Apple-iPhone-5.jpg",
@@ -43,7 +112,23 @@
     },
     {
         "symbol": "AAPL",
+<<<<<<< Updated upstream
         "company": "Apple",
+=======
+        "codename": "apple-ipad-3",
+        "name": "Apple iPad 3",
+        "description": "The Apple iPad 3, or simply iPad, as it is officially called, is Apple's latest foray in the contemporary tablet market - a market the company single-handedly started about two years ago. Although the third-generation iPad remains the same on the outside (not a bad thing), it does bring a lot of improvements on the inside. First of all, it has a new screen resolution of 2048x1536 pixels, delivering an amazing for a tablet pixel density of 264 ppi. Another major improvement has to do with the processor of the device, which is now the so-called A5X - still a dual-core processor, but with a new quad-core GPU for outstanding graphics performance. The camera has also been given a boost and is now much more capable in terms of both photo- and video-taking.",
+        "phonearenaRating": "9",
+        "userRating": "98",
+        "announceDate": "Mar  7, 2012",
+        "status": "Released",
+        "releaseDate": "Mar 16, 2012",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/35291-xlarge/Apple-iPad-3.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "codename": "apple-ipad-4",
+>>>>>>> Stashed changes
         "name": "Apple iPad 4",
         "description": "The fourth-generation iPad keeps the amazing screen resolution and general look and feel of its predecessor, but bumps up the specs with double the processing power and double the graphics power. The camera is also improved.\nThe new tablet adds a Lightning connector instead of the (not so) good old 30-pin connector. It also has faster Wi-Fi connectivity and expanded LTE.",
         "phonearenaRating": "9",
@@ -57,6 +142,7 @@
     },
     {
         "symbol": "AAPL",
+<<<<<<< Updated upstream
         "company": "Apple",
         "name": "Apple iPhone 5c",
         "description": "The iPhone 5c replaces the iPhone 5 in the Apple stable, inheriting its internals, like the A6 processor, 4\" screen and 8 MP camera, but wraps them up in \"unapologetically plastic\" candy chassis that can be mixed and matched in many colors with the new slotted cases. It is Apple's first take at the upper mid-range concept, and runs the newest iOS 7 without a hitch.",
@@ -86,6 +172,33 @@
     {
         "symbol": "AAPL",
         "company": "Apple",
+=======
+        "codename": "apple-iphone-3gs",
+        "name": "Apple iPhone 3GS",
+        "description": "Apple iPhone 3GS adds support for HSDPA 7.2 Mbps fast data and a digital compass. The new model from Cupertino's factory also has an improved battery life and working speed - loading is much more faster. The camera is upgraded to a 3-megapixel sensor with autofocus and tap to focus option and is capable of video recording with a VGA resolution (640x480 pixels). In the other aspects, Apple iPhone 3GS is pretty much the same as the previous version and has a 3.5\" multi-touch display with resolution of 480x320 pixels, Wi-Fi, GPS and it has the same size.",
+        "phonearenaRating": "85",
+        "userRating": "8.58",
+        "announceDate": "Jun  8, 2009",
+        "status": "Released",
+        "releaseDate": "Jun 19, 2009",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/16112-large/Apple-iPhone-3GS.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "codename": "apple-iphone-4-verizon",
+        "name": "Apple iPhone 4 Verizon",
+        "description": "The first CDMA version of the Apple iPhone - the iPhone 4 is almost completely identical to AT&T's smartphone, with the only difference being the CDMA radio and ability to do Mobile Hotspot for up to 5 devices. The other features include a 5MP main camera lens with LED flash and 720p HD video recording, secondary mic for noise-cancellation, GPS, Gyroscope and what not.",
+        "phonearenaRating": "9",
+        "userRating": "97.9",
+        "announceDate": "Jan 11, 2011",
+        "status": "Released",
+        "releaseDate": "Feb 10, 2011",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/26122-xlarge/Apple-iPhone-4-Verizon.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "codename": "apple-ipad-3-verizon",
+>>>>>>> Stashed changes
         "name": "Apple iPad 3 Verizon",
         "description": "The Apple iPad 3 for Verizon Wireless, or simply iPad, as it is officially called, is Apple's latest foray in the contemporary tablet market - a market the company single-handedly started about two years ago. Although the third-generation iPad remains the same on the outside (not a bad thing), it does bring a lot of improvements on the inside. First of all, it has a new screen resolution of 2048x1536 pixels, delivering an amazing for a tablet pixel density of 264 ppi. Another major improvement has to do with the processor of the device, which is now the so-called A5X - still a dual-core processor, but with a new quad-core GPU for outstanding graphics performance. The camera has also been given a boost and is now much more capable in terms of both photo- and video-taking. Finally, the new iPad 3 has been blessed with LTE connectivity. Additionally, all 4G iPads will also have global 3G capabilities, so you should be able to use 3G on most carriers around the world.",
         "phonearenaRating": "9",
@@ -99,12 +212,57 @@
     },
     {
         "symbol": "AAPL",
+<<<<<<< Updated upstream
         "company": "Apple",
         "name": "Apple iPad 3 AT&T",
         "description": "The Apple iPad 3 for AT&T, or simply iPad, as it is officially called, is Apple's latest foray in the contemporary tablet market - a market the company single-handedly started about two years ago. Although the third-generation iPad remains the same on the outside (not a bad thing), it does bring a lot of improvements on the inside. First of all, it has a new screen resolution of 2048x1536 pixels, delivering an amazing for a tablet pixel density of 264 ppi. Another major improvement has to do with the processor of the device, which is now the so-called A5X - still a dual-core processor, but with a new quad-core GPU for outstanding graphics performance. The camera has also been given a boost and is now much more capable in terms of both photo- and video-taking. Finally, the new iPad 3 has been blessed with LTE connectivity. Additionally, all 4G iPads will also have global 3G capabilities, so you should be able to use 3G on most carriers around the world.",
         "phonearenaRating": "9",
         "userRating": "9",
         "announceDate": "Mar  7, 2012",
+=======
+        "codename": "apple-iphone-5",
+        "name": "Apple iPhone 5",
+        "description": "The Apple iPhone 5 is the first iPhone with a larger, 4-inch screen. At the same time, it has become thinner, with a more elongated body. The iPhone 5 is powered by a new A6 chip that’s twice as powerful as the chip on the preceding iPhone 4S. It’s also the first iPhone with 4G LTE, supporting not just American frequencies, but LTE networks across the globe.",
+        "phonearenaRating": "9",
+        "userRating": "98.5",
+        "announceDate": "Sep 12, 2012",
+        "status": "Released",
+        "releaseDate": "Sep 21, 2012",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/37986-xlarge/Apple-iPhone-5.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "codename": "apple-ipod-touch-4th-generation",
+        "name": "Apple iPod touch 4th generation",
+        "description": "Apple iPod touch 4th generation is a portable media player running Apple`s iOS 4.3. It has 3.5\" Retina display, Apple A4 processor, 0.7MP rear camera, 0.3MP front camera, Wi-Fi and Bluetooth.",
+        "phonearenaRating": "8115",
+        "userRating": "8.1",
+        "announceDate": "Sep  1, 2010",
+        "status": "Released",
+        "releaseDate": "",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/27955-large/Apple-iPod-touch-4th-generation.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "codename": "apple-iphone",
+        "name": "Apple iPhone",
+        "description": "Apple iPhone is unique phone with slim profile and no keys - it has 3.5 inches touch display that uses multi-touch technology for navigation. A sensor controls the orientation of the display, and iPhone OS controls the smartphone's functionality. It is a quad-band GSM/EDGE device with WiFi and Bluetooth, and features 16/8/4GB of memory. Among its features there are YouTube and Google Maps applications, excellent internet browser called Safari and iPOD music/video player with CoverFlow technology, showing large album covers.",
+        "phonearenaRating": "88",
+        "userRating": "8.88.1",
+        "announceDate": "Jan  9, 2007",
+        "status": "Released",
+        "releaseDate": "Jun 29, 2007",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/9090-large/Apple-iPhone.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "codename": "apple-ipad-mini-2",
+        "name": "Apple iPad mini 2",
+        "description": "The iPad mini with Retina Display kicker? That amazing 7.9\" display carries the same resolution as the larger iPad. That's right, 2048x1536 pixels amounts to 326ppi pixel density, a record feat on a device that is basically all screen. Neither Nexus 7, nor the G Pad 8.3 can match this, but it's up to you if the premium design and the extra pixel density are worth the $399 starting price Apple is commanding for the iPad mini with Retina Display. Bear in mind that it is also incredibly thin and light, and all of that is achieved from an aluminum-crafted chassis that comes in the trendy Space Gray color now.",
+        "phonearenaRating": "85",
+        "userRating": "8.59.5",
+        "announceDate": "Oct 22, 2013",
+>>>>>>> Stashed changes
         "status": "Released",
         "releaseDate": "Mar 16, 2012",
         "imageUrl": "//i-cdn.phonearena.com/images/phones/35297-xlarge/Apple-iPad-3-AT-T.jpg",
@@ -113,6 +271,7 @@
     },
     {
         "symbol": "AAPL",
+<<<<<<< Updated upstream
         "company": "Apple",
         "name": "Apple iPod touch",
         "description": "Apple iPod touch is the first iPod with touchscreen and Apple`s mobile platform iOS. It has 3.5\"  capacitive display, Wi-Fi, accelerometer, music and video player.",
@@ -161,6 +320,38 @@
         "phonearenaRating": "911",
         "userRating": "9",
         "announceDate": "Sep 12, 2012",
+=======
+        "codename": "apple-ipad-3-at&t",
+        "name": "Apple iPad 3 AT&T",
+        "description": "The Apple iPad 3 for AT&T, or simply iPad, as it is officially called, is Apple's latest foray in the contemporary tablet market - a market the company single-handedly started about two years ago. Although the third-generation iPad remains the same on the outside (not a bad thing), it does bring a lot of improvements on the inside. First of all, it has a new screen resolution of 2048x1536 pixels, delivering an amazing for a tablet pixel density of 264 ppi. Another major improvement has to do with the processor of the device, which is now the so-called A5X - still a dual-core processor, but with a new quad-core GPU for outstanding graphics performance. The camera has also been given a boost and is now much more capable in terms of both photo- and video-taking. Finally, the new iPad 3 has been blessed with LTE connectivity. Additionally, all 4G iPads will also have global 3G capabilities, so you should be able to use 3G on most carriers around the world.",
+        "phonearenaRating": "9",
+        "userRating": "9",
+        "announceDate": "Mar  7, 2012",
+        "status": "Released",
+        "releaseDate": "Mar 16, 2012",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/35297-xlarge/Apple-iPad-3-AT-T.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "codename": "apple-iphone-4s",
+        "name": "Apple iPhone 4s",
+        "description": "The iPhone 4s is a gradual step over the iPhone 4 improving the internals, but keeping the look and feel. At the same time, though, it brings a reworked iOS 5 and introduces Siri, a personal voice assistant allowing you to vocally communicate with the iPhone. It comes with a 3.5\" screen with a resolution of 640 x 960 pixels, but on the inside there's a twice more powerful dual-core A5 processor. It also improves connectivity a notch, bringing 14.4Mbps HSPA download speeds. The back is where an 8-megapixel camera resides and it's capable of recording 1080p videos.",
+        "phonearenaRating": "85",
+        "userRating": "8.58.1",
+        "announceDate": "Oct  4, 2011",
+        "status": "Released",
+        "releaseDate": "Oct 14, 2011",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/31840-large/Apple-iPhone-4s.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "codename": "apple-ipad-2-wi-fi",
+        "name": "Apple iPad 2 Wi-Fi",
+        "description": "The Wi-Fi-only iPad 2 version is the cheapest of them all, and also the lightest at 1.33 pounds (601 grams). It  improves on its predecessor in both desing and hardware, since the iconic tablet is now thinner even than the iPhone 4 at 0.34\" (8.8mm). It is powered by a 1 GHz dual-core Apple A5 chipset, which provides 2x the CPU and 9x the GPU performance of its predecessor. All that while keeping the same 10 hours of battery life. Dressed entirely in black or white this time, the iPad 2 sports HDMI output via a separate cable, as well as rear and front-facing cameras.",
+        "phonearenaRating": "85",
+        "userRating": "8.57.9",
+        "announceDate": "Mar  2, 2011",
+>>>>>>> Stashed changes
         "status": "Released",
         "releaseDate": "",
         "imageUrl": "//i-cdn.phonearena.com/images/phones/38586-xlarge/Apple-iPod-touch-5th-generation.jpg",
@@ -169,7 +360,11 @@
     },
     {
         "symbol": "AAPL",
+<<<<<<< Updated upstream
         "company": "Apple",
+=======
+        "codename": "apple-ipad-wi-fi",
+>>>>>>> Stashed changes
         "name": "Apple iPad Wi-Fi",
         "description": "Apple iPad is a 9.7-inch tablet that fills the gap between the iPhone and the Mac. There are 16, 32 or 64-gigabyte versions, each sporting a 1GHz Apple A4 processor and running Apple's iOS operating system, Wi-Fi 802.11n and Bluetooth 2.1 + EDR. The battery of the iPad is rated to be able to hold up for a month in standby and 10 hours of use time.",
         "phonearenaRating": "8",
@@ -177,6 +372,7 @@
         "announceDate": "Jan 27, 2010",
         "status": "Released",
         "releaseDate": "",
+<<<<<<< Updated upstream
         "imageUrl": "//i-cdn.phonearena.com/images/phones/23152-xlarge/Apple-iPad-Wi-Fi.jpg",
         "weight": "23.99 oz",
         "size": "9.7 inches"
@@ -184,6 +380,13 @@
     {
         "symbol": "AAPL",
         "company": "Apple",
+=======
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/23152-xlarge/Apple-iPad-Wi-Fi.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "codename": "apple-ipod-touch-2nd-generation",
+>>>>>>> Stashed changes
         "name": "Apple iPod touch 2nd generation",
         "description": "Apple iPod touch 2nd generation is a portable media player running Apple`s iOS 2.1. It has 3.5\"  capacitive display, Wi-Fi, accelerometer, music and video player.",
         "phonearenaRating": "",
@@ -197,6 +400,7 @@
     },
     {
         "symbol": "AAPL",
+<<<<<<< Updated upstream
         "company": "Apple",
         "name": "Apple iPhone 4",
         "description": "The iPhone 4 is now boxier, with the rear side now flat, instead of rounded.  It will keep the 3.5-inch display diagonal, but will quadruple the pixels to 640x960, making it the highest-resolution screen on a smartphone to date. Apple actually calls the new screen Retina Display, because it shows 326 pixels per inch, while the human eye can only distinguish around 300 ppi. In addition, the screen will utilize the LCD IPS  technology (same as in the iPad). The other new stuff includes a front-facing video call camera, 5MP main camera lens with LED flash and 720p HD video recording, Micro-SIM slot, instead of ordinary SIM, a secondary mic for noise-cancellation and a lot of other new features.",
@@ -340,10 +544,64 @@
         "company": "Apple",
         "name": "Apple iPhone 4 Verizon",
         "description": "The first CDMA version of the Apple iPhone - the iPhone 4 is almost completely identical to AT&T's smartphone, with the only difference being the CDMA radio and ability to do Mobile Hotspot for up to 5 devices. The other features include a 5MP main camera lens with LED flash and 720p HD video recording, secondary mic for noise-cancellation, GPS, Gyroscope and what not.",
-        "phonearenaRating": "9",
-        "userRating": "97.9",
-        "announceDate": "Jan 11, 2011",
+=======
+        "codename": "apple-ipod-touch-3rd-generation",
+        "name": "Apple iPod touch 3rd generation",
+        "description": "Apple iPod touch 3rd generation is a portable media player running Apple`s iOS 3.1. It has 3.5\"  capacitive display, Wi-Fi, accelerometer, and  Bluetooth.",
+        "phonearenaRating": "",
+        "userRating": "",
+        "announceDate": "Sep  9, 2009",
         "status": "Released",
+        "releaseDate": "",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/27962-large/Apple-iPod-touch-3rd-generation.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "codename": "apple-ipad-2-verizon",
+        "name": "Apple iPad 2 Verizon",
+        "description": "Apple's first CDMA tablet is a version of the iPad 2 for Verizon, and it shares all its specs, save for the 1.34 pounds (607 g) of weight. The iPad 2  improves on its predecessor in both desing and hardware, since the renowned tablet is now thinner even than the iPhone 4 at 0.34\" (8.8mm). It is powered by a 1GHz dual-core Apple A5 chipset, which provides 2x the CPU and 9x the GPU performance of its predecessor. All that while keeping the same 10 hours of battery life. Dressed entirely in black or white this time, the iPad 2 sports HDMI output via a separate cable, as well as rear and front-facing cameras - the first supports HD video recording, and the second FaceTime for video chat with other iDevices.",
+        "phonearenaRating": "85",
+        "userRating": "8.58.7",
+        "announceDate": "Mar  2, 2011",
+        "status": "Released",
+        "releaseDate": "Mar 11, 2011",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/27204-large/Apple-iPad-2-Verizon.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "codename": "apple-ipad-mini-3",
+        "name": "Apple iPad mini 3",
+        "description": "The iPad mini 3 is Apple's third-generation mini tablet, although technically, it is almost identical to its predecessor. The device offers a 7.9-inch Retina Display with a resolution of 2048 by 1536 pixels. Processing power is provided by an Apple-designed A7 system-on-chip, and up to 128GB of storage are available for storing files and media. In charge is the latest version of iOS, Apple's mobile operating system. All this is housed in a lightweight, 7.5-millimeter thin body made of premium aluminium. Unlike its predecessor, the iPad mini 3 has a Touch ID fingerprint scanner built into its home button.",
+        "phonearenaRating": "8",
+        "userRating": "810",
+        "announceDate": "Oct 16, 2014",
+        "status": "Released",
+        "releaseDate": "",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/49659-xlarge/Apple-iPad-mini-3.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "codename": "apple-ipod-touch",
+        "name": "Apple iPod touch",
+        "description": "Apple iPod touch is the first iPod with touchscreen and Apple`s mobile platform iOS. It has 3.5\"  capacitive display, Wi-Fi, accelerometer, music and video player.",
+        "phonearenaRating": "91",
+        "userRating": "9",
+        "announceDate": "Sep 13, 2007",
+        "status": "Released",
+        "releaseDate": "",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/27972-large/Apple-iPod-touch.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "codename": "apple-iphone-6",
+        "name": "Apple iPhone 6",
+        "description": "The iPhone 6 represents Apple's second largest departure in terms of design since the iPhone 4, and ushers in an era of rounded aesthetics. Equipped with a 4.7-inch display, the iPhone 6 is also much larger than its predecessor, the iPhone 5s, but Apple has managed to trim some extra fat in order to make the new iPhone even thinner, at 0.27 in (6.9 mm). \n\nThe innards of the iPhone 6, too, went through improvements. The home-grown dual-core A8 processor is the third consecutive Apple chip to be custom-designed, and offers performance improvements of up to 25% and 50% in the of CPU and GPU departments respectively. The 8-megapixel, 1/3” iSight camera also received several upgrades, mostly on the software side, and now offers faster, phase detection auto focus, plus support for super-smooth 720p clips at the industry-leading 240 frames per second.",
+>>>>>>> Stashed changes
+        "phonearenaRating": "9",
+        "userRating": "99.2",
+        "announceDate": "Sep  9, 2014",
+        "status": "Released",
+<<<<<<< Updated upstream
         "releaseDate": "Feb 10, 2011",
         "imageUrl": "//i-cdn.phonearena.com/images/phones/26122-xlarge/Apple-iPhone-4-Verizon.jpg",
         "weight": "4.83 oz",
@@ -418,5 +676,69 @@
         "imageUrl": "//i-cdn.phonearena.com/images/phones/31840-large/Apple-iPhone-4s.jpg",
         "weight": "4.94 oz",
         "size": "3.5 inches"
+=======
+        "releaseDate": "Sep 19, 2014",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/48955-xlarge/Apple-iPhone-6.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "codename": "apple-iphone-3g",
+        "name": "Apple iPhone 3G",
+        "description": "Apple iPhone 3G adds support of 3G HSDPA fast data and GPS. It has the same screen, camera, OS and memory (8 or 16GB) as the first one, and almost the same design but now will accept any 3.5mm headphones. It will run on the new software version which support third party application thanks to the official SDK.",
+        "phonearenaRating": "8",
+        "userRating": "87.4",
+        "announceDate": "Jun  9, 2008",
+        "status": "Released",
+        "releaseDate": "Jul 11, 2008",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/10530-large/Apple-iPhone-3G.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "codename": "apple-ipad-air",
+        "name": "Apple iPad Air",
+        "description": "The iPad Air is Apple's fifth generation full-sized iPad tablet, and the name is definitelly fitting for this remarkable device. It is only 7.5 millimeters thin and weighs just 469 grams, making it the lightest slate of this size. Its screen is identical to the one we know from its predecessor - a 9.7-inch Retina Display with oleophobic coating and resolution of 1536 by 2048 pixels. Under the hood, Apple has chosen to install its A7 chip, which is the very same 64-bit SoC powering the iPhone 5s. As a result, the new iPad is two times faster than the previous model. With the 5MP iSight camera, one can take detailed photos and 1080p Full HD videos, while the FaceTime HD front-facing snapper is ideal for video chats and self portraits. Connecting to the internet is done either via Wi-Fi, or over a 4G LTE network, should you choose a cellular-enabled iPad Air model. Apple's iOS 7 operating system is loaded onto the tablet, with iPhoto, iMovie, GarageBand, Pages, Numbers, and Keynote apps included at no cost.",
+        "phonearenaRating": "92",
+        "userRating": "9.29.2",
+        "announceDate": "Oct 22, 2013",
+        "status": "Released",
+        "releaseDate": "Nov  1, 2013",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/43426-large/Apple-iPad-Air.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "codename": "apple-ipod-touch-5th-generation",
+        "name": "Apple iPod touch 5th generation",
+        "description": "The 2012 iPod touch is probably the biggest redefinition the series has seen since its launch. For the first time, the iPod touch arrives with a bigger, 4-inch display, a 5-megapixel iSight camera shooting 1080p video, and a selection of vibrant colors. The iPod touch has a brilliant new design putting it in a category where it’s thinner and lighter than the iPhone, and with a unique lace it almost looks like this device is now not just a music player, but also a camera replacement.",
+        "phonearenaRating": "911",
+        "userRating": "9",
+        "announceDate": "Sep 12, 2012",
+        "status": "Released",
+        "releaseDate": "",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/38586-xlarge/Apple-iPod-touch-5th-generation.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "codename": "apple-ipad-air-2",
+        "name": "Apple iPad Air 2",
+        "description": "The iPad Air 2 is technically Apple's sixth generation iPad, and the second to carry the 'Air' moniker. It's slightly thinner than the original Air, but differs little in appearance. The main changes are under the hood: the tablet runs on iOS 8 and is powered by Apple's A8X chip, and it gets a higher-resolution 8-megapixel camera.",
+        "phonearenaRating": "9",
+        "userRating": "910",
+        "announceDate": "Oct 16, 2014",
+        "status": "Released",
+        "releaseDate": "",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/49747-xlarge/Apple-iPad-Air-2.jpg"
+    },
+    {
+        "symbol": "AAPL",
+        "codename": "apple-iphone-6-plus",
+        "name": "Apple iPhone 6 Plus",
+        "description": "The iPhone 6 Plus is Apple's largest smartphone ever, with a 5.5-inch display and a resolution of 1080 x 1920 pixels -- good for a pixel density of 401 ppi. The rest of the highlights of Apple's first phablet include a 64-bit dual-core A8 processor with an M8 co-processor, an 8-megapixel iSight camera with optical image stabilization and a two-tone LED flash, and, for the first time for an Apple device -- an NFC chip that facilitates mobile payments through the company's Apple Pay service.",
+        "phonearenaRating": "9",
+        "userRating": "99.1",
+        "announceDate": "Sep  9, 2014",
+        "status": "Released",
+        "releaseDate": "Sep 19, 2014",
+        "imageUrl": "//i-cdn.phonearena.com/images/phones/48965-xlarge/Apple-iPhone-6-Plus.jpg"
+>>>>>>> Stashed changes
     }
 ]

@@ -79,7 +79,8 @@ var phoneData = function (jsonDataArray, symbol, company, urls, index, callback)
 
         var json = {
             symbol: '',
-            company: "",
+            company: '',
+            codename: '',
             name: '',
             description: '',
             phonearenaRating: '',
@@ -89,7 +90,7 @@ var phoneData = function (jsonDataArray, symbol, company, urls, index, callback)
             releaseDate: '',
             imageUrl: '',
             weight: '',
-            size: '',
+            size: ''
         };
 
         $('#phone').filter(function () {
@@ -114,6 +115,7 @@ var phoneData = function (jsonDataArray, symbol, company, urls, index, callback)
             json.symbol = symbol;
             json.company = company;
             json.name = name;
+            json.codename = name.replace(/\s+/g, '-').toLowerCase();
             json.description = description;
             json.phonearenaRating = phonearenaRating;
             json.userRating = userRating;

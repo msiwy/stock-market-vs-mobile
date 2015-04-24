@@ -19,8 +19,6 @@ var onPhoneSelect = function () {
         // Phone description
         var description = document.getElementById('description');
         description.innerHTML = json[0].description;
-
-
     });
 };
 

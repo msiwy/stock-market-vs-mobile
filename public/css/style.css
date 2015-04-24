@@ -82,3 +82,15 @@ img {
     background:#ccc;
     color:#fff;
 }
+
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+}
+
+.fixed-panel {
+    min-height: 100px;
+    max-height: 100px;
+    overflow-y: scroll;
+}

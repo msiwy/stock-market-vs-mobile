@@ -148,8 +148,7 @@ buildTimeSeries = function () {
             }
         },
         legend: {
-            show: true,
-            position: 'right'
+            show: true
         },
         zoom: {
             // You are able to zoom with use of the mousewheel
