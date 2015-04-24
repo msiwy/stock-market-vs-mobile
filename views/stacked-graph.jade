@@ -52,6 +52,12 @@ block content
                             | #{model.name}
                 li.dropdown-header
                     | Motorola
+                each model in phoneData[2]
+                    li
+                        a(role="menuitem" tabindex="-1" href="#" onclick='onPhoneSelect("#{model.name}")')
+                            | #{model.name}
+                li.dropdown-header
+                    | Sony
                 each model in phoneData[3]
                     li
                         a(role="menuitem" tabindex="-1" href="#" onclick='onPhoneSelect("#{model.name}")')
