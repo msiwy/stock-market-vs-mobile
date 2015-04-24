@@ -88,3 +88,9 @@ img {
     height:auto;
     display:inline-block;
 }
+
+.fixed-panel {
+    min-height: 100px;
+    max-height: 100px;
+    overflow-y: scroll;
+}

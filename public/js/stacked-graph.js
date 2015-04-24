@@ -93,7 +93,7 @@ buildTimeSeries = function () {
     var chart = c3.generate({
         bindto: '#chart',
         size: {
-            height: 600
+            height: 650
         },
         data: {
             xs: {
@@ -126,6 +126,12 @@ buildTimeSeries = function () {
                 type: 'timeseries',
                 tick: {
                     format: '%Y-%m-%d'
+                }
+            },
+            y: {
+                label: {
+                    text: 'Percent Change (Collapsed Weekly)',
+                    position: 'outer-middle'
                 }
             }
         },

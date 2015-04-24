@@ -79,11 +79,8 @@ var phoneData = function (jsonDataArray, symbol, company, urls, index, callback)
 
         var json = {
             symbol: '',
-<<<<<<< Updated upstream
-            company: "",
-=======
+            company: '',
             codename: '',
->>>>>>> Stashed changes
             name: '',
             description: '',
             phonearenaRating: '',
@@ -93,7 +90,7 @@ var phoneData = function (jsonDataArray, symbol, company, urls, index, callback)
             releaseDate: '',
             imageUrl: '',
             weight: '',
-            size: '',
+            size: ''
         };
 
         $('#phone').filter(function () {
