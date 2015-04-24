@@ -22,7 +22,6 @@ exports.getStackedGraph = function(req, res) {
 
     res.render('stacked-graph', {
         title: 'Stacked Graph',
-        phoneData: phoneData,
-        phone: req.query.phone
+        phoneData: phoneData
     });
 };

@@ -116,6 +116,13 @@ var onPhoneSelect = function(name) {
             }
         }
 
+        // Phone
+        var phoneName = json[index].name;
+        var phoneNameHTML = document.getElementById('phoneSelect');
+        console.log(document.getElementById('phoneSelect'));
+        phoneNameHTML.innerText = phoneName;
+
+
         // Image
         var imageUrl = "<image src=\"http:" + json[index].imageUrl + "\" class = \"img-rounded\">";
         var image = document.getElementById('image');

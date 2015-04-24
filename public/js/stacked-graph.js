@@ -10,8 +10,11 @@ var sources = [
     'https://www.quandl.com/api/v1/datasets/GOOG/NASDAQ_AAPL.json?auth_token=MX4jg7jQAHp7SDTxGxd4&collapse=monthly&trim_start=2012-12-31',
     'https://www.quandl.com/api/v1/datasets/GOOG/NYSE_MSI.json?auth_token=MX4jg7jQAHp7SDTxGxd4&collapse=monthly&trim_start=2012-12-31',
     'https://www.quandl.com/api/v1/datasets/GOOG/NASDAQ_GOOG.json?auth_token=MX4jg7jQAHp7SDTxGxd4&collapse=monthly&trim_start=2012-12-31',
+    'https://www.quandl.com/api/v1/datasets/GOOG/NYSE_SNE.json?auth_token=MX4jg7jQAHp7SDTxGxd4&collapse=monthly&trim_start=2012-12-31',
     '../phone-data/Apple.json',
-    '../phone-data/Google.json'
+    '../phone-data/Google.json',
+    '../phone-data/Motorola.json',
+    '../phone-data/Sony.json'
 ];
 
 var retrieveSingleStockInfo = function (index, callback) {
@@ -57,10 +60,11 @@ var fetchJSON = function (callback) {
 
 fetchJSON(function () {
     // output data to JSON
-    if (lineData.length == 3 &&
+    if (lineData.length == 4 &&
             lineData[0] != null &&
             lineData[1] != null &&
             lineData[2] != null &&
+            lineData[3] != null &&
             !finished) {
         buildTimeSeries();
         finished = true;
@@ -99,27 +103,36 @@ buildTimeSeries = function () {
             xs: {
                 "NASDAQ_AAPL": "NASDAQ_AAPLx",
                 "NYSE_MSI": "NYSE_MSIx",
-                "NASDAQ_GOOG": "NASDAQ_GOOGx"
+                "NASDAQ_GOOG": "NASDAQ_GOOGx",
+                "NYSE_SNE": "NYSE_SNEx"
             },
             columns: [
                 modData[0],
                 modData[1],
                 modData[2],
+                modData[3],
                 xValues[0],
                 xValues[1],
-                xValues[2]
+                xValues[2],
+                xValues[3]
+
             ],
             types: {
                 NASDAQ_AAPL: 'area-spline',
                 NYSE_MSI: 'area-spline',
-                NASDAQ_GOOG: 'area-spline'
+                NASDAQ_GOOG: 'area-spline',
+                NYSE_SNE: 'area-spline'
                 // 'line', 'spline', 'step', 'area', 'area-step' are also available to stack
             },
-            groups: [
-                //['AAPL', 'MSI']
-                ////['AAPL', 'GOOG'],
-                ////['GOOG', 'MSI']
-            ]
+            //groups: [
+            //],
+            names: {
+                // Rename legend values
+                NASDAQ_AAPL: 'Apple',
+                NYSE_MSI: 'Motorola',
+                NASDAQ_GOOG: 'Google',
+                NYSE_SNE: 'Sony'
+            }
         },
         axis: {
             x: {
