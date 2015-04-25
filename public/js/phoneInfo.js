@@ -102,10 +102,10 @@ var sparklineChart = c3.generate({
 sparklineChart.zoom.enable(true);
 
 /* UPDATE PHONE INFO ON SELECT */
-var onPhoneSelect = function (name) {
+var onPhoneSelect = function(name) {
 
     var div = document.getElementById('phoneInfo');
-    $.getJSON('data/All.json', function (json) {
+    $.getJSON('data/All.json', function(json) {
         /* LOAD PHONE INFORMATION TO HTML */
         // Find the appropriate index of the phone
         var index = 0;
@@ -144,17 +144,30 @@ var onPhoneSelect = function (name) {
                 break;
         }
 
-        // Edge cases for no data in json
-        if (json[index].phonearenaRating == "" || json[index].userRating == "") {
-            setTimeout(function () {
+        // Edge cases for no data or malformed data in json
+        var phonearenaRating = json[index].phonearenaRating;
+        var userRating = json[index].userRating;
+        phonearenaRating = phonearenaRating.split('.').join("");
+        userRating = userRating.split('.').join("");
+        while (phonearenaRating > 10) {
+            phonearenaRating /= 10;
+        }
+        while (userRating > 10) {
+            userRating /= 10;
+        }
+
+        if (phonearenaRating == "" || isNaN(phonearenaRating)) {
+            setTimeout(function() {
                 phoneArenaRatingsChart.load({
                     columns: [
                         ['Phone Arena Ratings', 0]
                     ]
                 });
             }, 0);
+        }
 
-            setTimeout(function () {
+        if (userRating == "" || isNaN(userRating)) {
+            setTimeout(function() {
                 userRatingsChart.load({
                     columns: [
                         ['User Ratings', 0]
@@ -163,34 +176,45 @@ var onPhoneSelect = function (name) {
             }, 0);
         }
 
-        if (json[index].releaseDate == "unknown" || json[index].releaseDate == "" || json[index].announceDate == "unknown" || json[index].announceDate == "") {
-            setTimeout(function () {
+        if (json[index].announceDate == "unknown" || json[index].announceDate == "") {
+            setTimeout(function() {
                 sparklineChart.load({
                     columns: [
                         ['x', '2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
                         ['price', 0, 0, 0, 0, 0, 0]
                     ]
                 });
-            }, 500);
+            }, 0);
         }
 
         // PhoneArena doesn't have correct scoring across all phones.
-        var phonearenaRating = json[index].phonearenaRating;
         if (phonearenaRating > 10) phonearenaRating /= 10;
-        var userRating = json[index].userRating;
         if (userRating > 10) userRating /= 10;
 
         // Format Date for sparkline
         var annouceDate = parsePhoneDate(json[index].announceDate);
         var releaseDate = parsePhoneDate(json[index].releaseDate);
+        var date, month, year, dateR, monthR, yearR;
+        if (Object.prototype.toString.call(annouceDate) === "[object Date]") {
+            date = ("0" + (annouceDate.getDate() + 1)).slice(-2);
+            month = ("0" + (annouceDate.getMonth() + 1)).slice(-2);
+            year = annouceDate.getFullYear();
+            setTimeout(function() {
+                sparklineChart.load({
+                    columns: [
+                        ['x', '2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
+                        ['price', 0, 0, 0, 0, 0, 0]
+                    ]
+                });
+            }, 0);
+        }
 
-        var date = ("0" + (annouceDate.getMonth() + 1)).slice(-2);
-        var dateR = ("0" + (releaseDate.getMonth() + 1)).slice(-2);
-        var month = ("0" + (annouceDate.getMonth() + 1)).slice(-2);
-        var monthR = ("0" + (releaseDate.getMonth() + 1)).slice(-2);
+        if (Object.prototype.toString.call(releaseDate) === "[object Date]") {
+            dateR = ("0" + (releaseDate.getDate() + 1)).slice(-2);
+            monthR = ("0" + (releaseDate.getMonth() + 1)).slice(-2);
+            yearR = releaseDate.getFullYear();
+        }
 
-        var year = annouceDate.getFullYear();
-        var yearR = releaseDate.getFullYear();
         var formattedAnnounceDate = year + "-" + month + "-" + date;
         var formattedReleaseDate = yearR + "-" + monthR + "-" + dateR;
 
@@ -216,15 +240,15 @@ var onPhoneSelect = function (name) {
         $.ajax({
             url: stockJsonUrl,
             async: true,
-            success: function (jsonData) {
+            success: function(jsonData) {
                 var dates = ['x'];
                 var prices = ['price'];
-                jsonData.data.forEach(function (d, i) {
+                jsonData.data.forEach(function(d, i) {
                     dates.push(d[0]);
                     prices.push(d[1].toFixed(2));
                 });
                 // Update sparkline
-                setTimeout(function () {
+                setTimeout(function() {
                     sparklineChart.load({
                         columns: [
                             dates,
@@ -232,7 +256,10 @@ var onPhoneSelect = function (name) {
                         ]
                     });
                 }, 500);
-                sparklineChart.xgrids([{value: formattedAnnounceDate, text: 'Announced'}, {
+                sparklineChart.xgrids([{
+                    value: formattedAnnounceDate,
+                    text: 'Announced'
+                }, {
                     value: formattedReleaseDate,
                     text: 'Released'
                 }]);
@@ -241,7 +268,7 @@ var onPhoneSelect = function (name) {
 
 
         // Unload and load all scores
-        setTimeout(function () {
+        setTimeout(function() {
             phoneArenaRatingsChart.load({
                 columns: [
                     ['Phone Arena Ratings', 0]
@@ -249,7 +276,7 @@ var onPhoneSelect = function (name) {
             });
         }, 0);
 
-        setTimeout(function () {
+        setTimeout(function() {
             phoneArenaRatingsChart.load({
                 columns: [
                     ['Phone Arena Ratings', phonearenaRating]
@@ -257,7 +284,7 @@ var onPhoneSelect = function (name) {
             });
         }, 500);
 
-        setTimeout(function () {
+        setTimeout(function() {
             userRatingsChart.load({
                 columns: [
                     ['User Ratings', 0]
@@ -265,7 +292,7 @@ var onPhoneSelect = function (name) {
             });
         }, 0);
 
-        setTimeout(function () {
+        setTimeout(function() {
             userRatingsChart.load({
                 columns: [
                     ['User Ratings', userRating]
