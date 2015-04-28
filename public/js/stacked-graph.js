@@ -7,10 +7,10 @@ var finished = false;
 var phonearenaCount = 0;
 
 var sources = [
-    'https://www.quandl.com/api/v1/datasets/GOOG/NASDAQ_AAPL.json?auth_token=MX4jg7jQAHp7SDTxGxd4&collapse=monthly&trim_start=2012-12-31',
-    'https://www.quandl.com/api/v1/datasets/GOOG/NYSE_MSI.json?auth_token=MX4jg7jQAHp7SDTxGxd4&collapse=monthly&trim_start=2012-12-31',
-    'https://www.quandl.com/api/v1/datasets/GOOG/NASDAQ_GOOG.json?auth_token=MX4jg7jQAHp7SDTxGxd4&collapse=monthly&trim_start=2012-12-31',
-    'https://www.quandl.com/api/v1/datasets/GOOG/NYSE_SNE.json?auth_token=MX4jg7jQAHp7SDTxGxd4&collapse=monthly&trim_start=2012-12-31',
+    'https://www.quandl.com/api/v1/datasets/GOOG/NASDAQ_AAPL.json?auth_token=MX4jg7jQAHp7SDTxGxd4&collapse=monthly&trim_start=2012-04-22',
+    'https://www.quandl.com/api/v1/datasets/GOOG/NYSE_MSI.json?auth_token=MX4jg7jQAHp7SDTxGxd4&collapse=monthly&trim_start=2012-04-22',
+    'https://www.quandl.com/api/v1/datasets/GOOG/NASDAQ_GOOG.json?auth_token=MX4jg7jQAHp7SDTxGxd4&collapse=monthly&trim_start=2012-04-22',
+    'https://www.quandl.com/api/v1/datasets/GOOG/NYSE_SNE.json?auth_token=MX4jg7jQAHp7SDTxGxd4&collapse=monthly&trim_start=2012-04-22',
     '../phone-data/Apple.json',
     '../phone-data/Google.json',
     '../phone-data/Motorola.json',
