@@ -250,7 +250,7 @@ buildTimeSeries = function () {
                 announceDayPrice = modData[0][markerDateIndex],
                 nextDayPrice = modData[0][markerDateIndex + 1],
                 nextWeekPrice = modData[0][markerDateIndex + 5], // Roughly next business week 
-                nextMonthPrice = modData[0][markerDateIndex + 26]; // Roughly next business month 
+                nextMonthPrice = modData[0][markerDateIndex + 20]; // Roughly next business month 
 
             // [Announce day price, Price diff. 1 day, Price diff. 1 week, Price diff. 1 month]    
             boxInfo = [announceDayPrice, (nextDayPrice - announceDayPrice).toFixed(2), (nextWeekPrice - announceDayPrice).toFixed(2), 
@@ -264,7 +264,7 @@ buildTimeSeries = function () {
                 announceDayPrice = modData[1][markerDateIndex],
                 nextDayPrice = modData[1][markerDateIndex + 1],
                 nextWeekPrice = modData[1][markerDateIndex + 5], // Roughly next business week 
-                nextMonthPrice = modData[1][markerDateIndex + 26]; // Roughly next business month 
+                nextMonthPrice = modData[1][markerDateIndex + 20]; // Roughly next business month 
 
             // [Announce day price, Price diff. 1 day, Price diff. 1 week, Price diff. 1 month]    
             boxInfo = [announceDayPrice, (nextDayPrice - announceDayPrice).toFixed(2), (nextWeekPrice - announceDayPrice).toFixed(2),
@@ -278,7 +278,7 @@ buildTimeSeries = function () {
                 announceDayPrice = modData[2][markerDateIndex],
                 nextDayPrice = modData[2][markerDateIndex + 1],
                 nextWeekPrice = modData[2][markerDateIndex + 5], // Roughly next business week 
-                nextMonthPrice = modData[2][markerDateIndex + 26]; // Roughly next business month 
+                nextMonthPrice = modData[2][markerDateIndex + 20]; // Roughly next business month 
 
             // [Announce day price, Price diff. 1 day, Price diff. 1 week, Price diff. 1 month]    
             boxInfo = [announceDayPrice, (nextDayPrice - announceDayPrice).toFixed(2), (nextWeekPrice - announceDayPrice).toFixed(2),
@@ -292,7 +292,7 @@ buildTimeSeries = function () {
                 announceDayPrice = modData[3][markerDateIndex],
                 nextDayPrice = modData[3][markerDateIndex + 1],
                 nextWeekPrice = modData[3][markerDateIndex + 5], // Roughly next business week 
-                nextMonthPrice = modData[3][markerDateIndex + 26]; // Roughly next business month 
+                nextMonthPrice = modData[3][markerDateIndex + 20]; // Roughly next business month 
 
             // [Announce day price, Price diff. 1 day, Price diff. 1 week, Price diff. 1 month]    
             boxInfo = [announceDayPrice, (nextDayPrice - announceDayPrice).toFixed(2), (nextWeekPrice - announceDayPrice).toFixed(2),
