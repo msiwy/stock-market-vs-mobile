@@ -248,9 +248,9 @@ buildTimeSeries = function () {
                 dataPointDateIndex = xValuesMs[0].indexOf(dataPoint.x.getTime()),
                 dataPointDayPrice = modData[0][dataPointDateIndex],
                 announceDayPrice = modData[0][markerDateIndex],
-                nextDayPrice = modData[0][markerDateIndex + 1],
-                nextWeekPrice = modData[0][markerDateIndex + 5], // Roughly next business week 
-                nextMonthPrice = modData[0][markerDateIndex + 20]; // Roughly next business month 
+                nextDayPrice = modData[0][markerDateIndex - 1],
+                nextWeekPrice = modData[0][markerDateIndex - 5], // Roughly next business week 
+                nextMonthPrice = modData[0][markerDateIndex - 20]; // Roughly next business month 
 
             // [Announce day price, Price diff. 1 day, Price diff. 1 week, Price diff. 1 month]    
             boxInfo = [announceDayPrice, (nextDayPrice - announceDayPrice).toFixed(2), (nextWeekPrice - announceDayPrice).toFixed(2), 
@@ -262,9 +262,9 @@ buildTimeSeries = function () {
                 dataPointDateIndex = xValuesMs[1].indexOf(dataPoint.x.getTime()),
                 dataPointDayPrice = modData[1][dataPointDateIndex],
                 announceDayPrice = modData[1][markerDateIndex],
-                nextDayPrice = modData[1][markerDateIndex + 1],
-                nextWeekPrice = modData[1][markerDateIndex + 5], // Roughly next business week 
-                nextMonthPrice = modData[1][markerDateIndex + 20]; // Roughly next business month 
+                nextDayPrice = modData[1][markerDateIndex - 1],
+                nextWeekPrice = modData[1][markerDateIndex - 5], // Roughly next business week 
+                nextMonthPrice = modData[1][markerDateIndex - 20]; // Roughly next business month 
 
             // [Announce day price, Price diff. 1 day, Price diff. 1 week, Price diff. 1 month]    
             boxInfo = [announceDayPrice, (nextDayPrice - announceDayPrice).toFixed(2), (nextWeekPrice - announceDayPrice).toFixed(2),
@@ -276,9 +276,9 @@ buildTimeSeries = function () {
                 dataPointDateIndex = xValuesMs[2].indexOf(dataPoint.x.getTime()),
                 dataPointDayPrice = modData[2][dataPointDateIndex],
                 announceDayPrice = modData[2][markerDateIndex],
-                nextDayPrice = modData[2][markerDateIndex + 1],
-                nextWeekPrice = modData[2][markerDateIndex + 5], // Roughly next business week 
-                nextMonthPrice = modData[2][markerDateIndex + 20]; // Roughly next business month 
+                nextDayPrice = modData[2][markerDateIndex - 1],
+                nextWeekPrice = modData[2][markerDateIndex - 5], // Roughly next business week 
+                nextMonthPrice = modData[2][markerDateIndex - 20]; // Roughly next business month 
 
             // [Announce day price, Price diff. 1 day, Price diff. 1 week, Price diff. 1 month]    
             boxInfo = [announceDayPrice, (nextDayPrice - announceDayPrice).toFixed(2), (nextWeekPrice - announceDayPrice).toFixed(2),
@@ -290,9 +290,9 @@ buildTimeSeries = function () {
                 dataPointDateIndex = xValuesMs[3].indexOf(dataPoint.x.getTime()),
                 dataPointDayPrice = modData[3][dataPointDateIndex],
                 announceDayPrice = modData[3][markerDateIndex],
-                nextDayPrice = modData[3][markerDateIndex + 1],
-                nextWeekPrice = modData[3][markerDateIndex + 5], // Roughly next business week 
-                nextMonthPrice = modData[3][markerDateIndex + 20]; // Roughly next business month 
+                nextDayPrice = modData[3][markerDateIndex - 1],
+                nextWeekPrice = modData[3][markerDateIndex - 5], // Roughly next business week 
+                nextMonthPrice = modData[3][markerDateIndex - 20]; // Roughly next business month 
 
             // [Announce day price, Price diff. 1 day, Price diff. 1 week, Price diff. 1 month]    
             boxInfo = [announceDayPrice, (nextDayPrice - announceDayPrice).toFixed(2), (nextWeekPrice - announceDayPrice).toFixed(2),
